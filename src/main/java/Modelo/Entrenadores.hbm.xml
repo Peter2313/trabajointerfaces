@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18 dic 2023 18:15:45 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="t_baloncesto" name="modelo.Entrenadores" optimistic-lock="none" table="entrenadores">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="modelo.Equipo" fetch="select" name="equipo">
+            <column name="idequipo" not-null="true" unique="true"/>
+        </many-to-one>
+        <property name="nombreCompletoentrenador" type="string">
+            <column length="255" name="nombreCompletoentrenador" not-null="true"/>
+        </property>
+        <property name="clocalColor" type="string">
+            <column length="50" name="cLocalColor" not-null="true"/>
+        </property>
+        <property name="cvisitanteColor" type="string">
+            <column length="50" name="cVisitanteColor" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

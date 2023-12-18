@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 dic 2023 18:15:45 by Hibernate Tools 6.3.1.Final -->
+<hibernate-mapping>
+ <class catalog="t_baloncesto" name="modelo.Usuarios"
+  optimistic-lock="none" table="usuarios">
+  <id name="id" type="java.lang.Integer">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="usuario" type="string">
+   <column length="15" name="usuario" not-null="true" unique="true"/>
+  </property>
+  <property generated="never" lazy="false" name="contrasena" type="string">
+   <column length="255" name="contrasena" not-null="true" unique="true"/>
+  </property>
+  <property generated="never" lazy="false" name="email" type="string">
+   <column length="50" name="email" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="nombre" type="string">
+   <column length="100" name="nombre" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="apellidos" type="string">
+   <column length="100" name="apellidos" not-null="true"/>
+  </property>
+  <set fetch="select" inverse="true" lazy="true" name="equipos"
+   sort="unsorted" table="equipo">
+   <key>
+    <column name="id_usuario" not-null="true"/>
+   </key>
+   <one-to-many class="modelo.Equipo"/>
+  </set>
+ </class>
+</hibernate-mapping>

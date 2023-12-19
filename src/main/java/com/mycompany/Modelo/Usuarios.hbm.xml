@@ -3,7 +3,7 @@
                                    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 18 dic 2023 18:15:45 by Hibernate Tools 6.3.1.Final -->
 <hibernate-mapping>
- <class catalog="t_baloncesto" name="modelo.Usuarios"
+ <class catalog="t_baloncesto" name="com.mycompany.Modelo.Usuarios"
   optimistic-lock="none" table="usuarios">
   <id name="id" type="java.lang.Integer">
    <column name="id"/>
@@ -29,7 +29,7 @@
    <key>
     <column name="id_usuario" not-null="true"/>
    </key>
-   <one-to-many class="modelo.Equipo"/>
+   <one-to-many class="com.mycompany.Modelo.Equipo"/>
   </set>
  </class>
 </hibernate-mapping>

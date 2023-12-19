@@ -2,20 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Vista;
+package com.mycompany.Vista;
 
 import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import com.mycompany.Modelo.Usuarios;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+
 /**
- *
  * @author Bypet
  */
 public class Dashboard extends javax.swing.JFrame {
+
+  private SessionFactory sessionFactory;
 
   /**
    * Creates new form Dashboard
@@ -27,6 +36,23 @@ public class Dashboard extends javax.swing.JFrame {
     mostrarpanel(new inicio());
     //btnmenu.putClientProperty("JButton.buttonType", "arc:5");
     UIManager.put("Button.arc", 5);
+    Configuration configuracion = new Configuration();
+    configuracion.configure("/hibernate.cfg.xml");
+    this.sessionFactory = configuracion.buildSessionFactory();
+    
+    try (Session session = sessionFactory.openSession()) {
+      Transaction transaction = session.beginTransaction();
+
+      // Consulta HQL para obtener todos los usuarios
+      String hql = "FROM Usuarios";
+      Query<Usuarios> query = session.createQuery(hql, Usuarios.class);
+      List<Usuarios> usuarios = query.list();
+      usuarios.forEach(System.out::println);
+      transaction.commit();
+    } catch (Exception e) {
+      e.printStackTrace();
+      // Manejar la excepción según tus necesidades
+    }
 
     /* //---- buttonGroup1 ----
     ButtonGroup buttonGroup1 = new ButtonGroup();
@@ -171,11 +197,11 @@ public class Dashboard extends javax.swing.JFrame {
     frame.setLayout(frameLayout);
     frameLayout.setHorizontalGroup(
       frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 1160, Short.MAX_VALUE)
+        .addGap(0, 1160, Short.MAX_VALUE)
     );
     frameLayout.setVerticalGroup(
       frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 0, Short.MAX_VALUE)
+        .addGap(0, 0, Short.MAX_VALUE)
     );
 
     getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 0, 1160, 900));
@@ -184,41 +210,41 @@ public class Dashboard extends javax.swing.JFrame {
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
 
-    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
+  private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new actuequipo());
-    }//GEN-LAST:event_btnactualizarActionPerformed
+  }//GEN-LAST:event_btnactualizarActionPerformed
 
-    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+  private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new inicio());
-    }//GEN-LAST:event_btnmenuActionPerformed
+  }//GEN-LAST:event_btnmenuActionPerformed
 
-    private void btninscriequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscriequipoActionPerformed
+  private void btninscriequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscriequipoActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new inscriequipo());
-    }//GEN-LAST:event_btninscriequipoActionPerformed
+  }//GEN-LAST:event_btninscriequipoActionPerformed
 
-    private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
+  private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
     // TODO add your handling code here:
     System.exit(0);
-    }//GEN-LAST:event_btnlogoutActionPerformed
+  }//GEN-LAST:event_btnlogoutActionPerformed
 
-    private void btninscrientrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrientrenadorActionPerformed
+  private void btninscrientrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrientrenadorActionPerformed
     // TODO add your handling code here:
-    }//GEN-LAST:event_btninscrientrenadorActionPerformed
+  }//GEN-LAST:event_btninscrientrenadorActionPerformed
 
-    private void btnborrarentreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarentreActionPerformed
+  private void btnborrarentreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarentreActionPerformed
     // TODO add your handling code here:
-    }//GEN-LAST:event_btnborrarentreActionPerformed
+  }//GEN-LAST:event_btnborrarentreActionPerformed
 
-    private void btninscrijugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrijugadoresActionPerformed
+  private void btninscrijugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrijugadoresActionPerformed
     // TODO add your handling code here:
-    }//GEN-LAST:event_btninscrijugadoresActionPerformed
+  }//GEN-LAST:event_btninscrijugadoresActionPerformed
 
-    private void btnactualizarjugaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarjugaActionPerformed
+  private void btnactualizarjugaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarjugaActionPerformed
     // TODO add your handling code here:
-    }//GEN-LAST:event_btnactualizarjugaActionPerformed
+  }//GEN-LAST:event_btnactualizarjugaActionPerformed
 
   /**
    * @param args the command line arguments
@@ -227,7 +253,7 @@ public class Dashboard extends javax.swing.JFrame {
     /* Set the Nimbus look and feel */
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
     /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+     * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
      */
     try {
       for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

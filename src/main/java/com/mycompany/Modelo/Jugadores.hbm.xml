@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 18 dic 2023 18:15:45 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 dic 2023 18:15:45 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="t_baloncesto" name="modelo.Jugadores" optimistic-lock="none" table="jugadores">
+    <class catalog="t_baloncesto" name="com.mycompany.Modelo.Jugadores" optimistic-lock="none" table="jugadores">
         <id name="idjugador" type="java.lang.Integer">
             <column name="idjugador"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="modelo.Equipo" fetch="select" name="equipo">
+        <many-to-one class="com.mycompany.Modelo.Equipo" fetch="select" name="equipo">
             <column name="idequipo" not-null="true" unique="true"/>
         </many-to-one>
         <property name="nombrejugador" type="string">

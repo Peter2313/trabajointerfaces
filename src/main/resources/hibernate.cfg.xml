@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/t_baloncesto</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.hbm2ddl.auto">none</property>
+        <!--<property name="hibernate.hbm2ddl.auto"></property>-->
         <property name="hibernate.search.autoregister_listeners">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
-        <mapping resource="modelo/Usuarios.hbm.xml"/>
-        <mapping resource="modelo/Jugadores.hbm.xml"/>
-        <mapping resource="modelo/Equipo.hbm.xml"/>
-        <mapping resource="modelo/Entrenadores.hbm.xml"/>
+
+        <mapping class="com.mycompany.Modelo.Usuarios"/>
+        <mapping class="com.mycompany.Modelo.Equipo"/>
+        <mapping class="com.mycompany.Modelo.Entrenadores"/>
+        <mapping class="com.mycompany.Modelo.Jugadores"/>
+        <!--<mapping resource="com/mycompany/Modelo/Usuarios.hbm.xml"/>
+        <mapping resource="com/mycompany/Modelo/Jugadores.hbm.xml"/>
+        <mapping resource="com/mycompany/Modelo/Equipo.hbm.xml"/>
+        <mapping resource="com/mycompany/Modelo/Entrenadores.hbm.xml"/>-->
     </session-factory>
 </hibernate-configuration>

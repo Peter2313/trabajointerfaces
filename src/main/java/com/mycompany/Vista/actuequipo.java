@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Vista;
+package com.mycompany.Vista;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -14,7 +14,7 @@ import javax.swing.UIManager;
  *
  * @author Bypet
  */
-public class inscrientrenador extends javax.swing.JPanel {
+public class actuequipo extends javax.swing.JPanel {
 
     /**
      * Creates new form inicio
@@ -22,15 +22,14 @@ public class inscrientrenador extends javax.swing.JPanel {
     Fondopanel fondo = new Fondopanel();
     Fondopanelmedio fondop = new Fondopanelmedio();
     
-    public inscrientrenador() {
+    public actuequipo() {
         //this.setContentPane(fondo);
         initComponents();
         UIManager.put( "Button.arc", 10 );
        //tfpassword.putClientProperty( "JComponent.roundRect", true );
        tfnombre.putClientProperty("JTextField.placeholderText","Introduzca nombre equipo");
-       tfciudad.putClientProperty("JTextField.placeholderText","Introduzca Ciudad");
-       tfnombrepresi.putClientProperty("JTextField.placeholderText","Nombre Presidente");
-       tfestadio.putClientProperty("JTextField.placeholderText","Introduzca nombre equipo");
+       tfestadio.putClientProperty("JTextField.placeholderText","Introduzca Estadio");
+       
     }
 
     /**
@@ -46,14 +45,10 @@ public class inscrientrenador extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new Fondopanelmedio();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btninscribir = new javax.swing.JButton();
         tfnombre = new javax.swing.JTextField();
         tfestadio = new javax.swing.JTextField();
-        tfciudad = new javax.swing.JTextField();
-        tfnombrepresi = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1160, 900));
 
@@ -62,22 +57,14 @@ public class inscrientrenador extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("INSCRIBIR ENTRENADOR");
+        jLabel1.setText("ACTUALIZAR EQUIPO");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setPreferredSize(new java.awt.Dimension(853, 780));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ciudad");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Nombre del Presidente");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Estadio");
+        jLabel2.setText("Estadio");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,10 +80,6 @@ public class inscrientrenador extends javax.swing.JPanel {
 
         tfestadio.setPreferredSize(new java.awt.Dimension(263, 42));
 
-        tfciudad.setPreferredSize(new java.awt.Dimension(263, 42));
-
-        tfnombrepresi.setPreferredSize(new java.awt.Dimension(263, 42));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -107,17 +90,13 @@ public class inscrientrenador extends javax.swing.JPanel {
                         .addGap(147, 147, 147)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(82, 82, 82)
+                            .addComponent(jLabel2))
+                        .addGap(152, 152, 152)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfnombrepresi, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(348, 348, 348)
+                        .addGap(320, 320, 320)
                         .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(143, Short.MAX_VALUE))
         );
@@ -131,18 +110,10 @@ public class inscrientrenador extends javax.swing.JPanel {
                 .addGap(79, 79, 79)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(tfciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(tfnombrepresi, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(100, 100, 100)
+                    .addComponent(tfestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
                 .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(409, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -156,7 +127,7 @@ public class inscrientrenador extends javax.swing.JPanel {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(410, 410, 410)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1)))
                 .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -186,15 +157,11 @@ public class inscrientrenador extends javax.swing.JPanel {
     private javax.swing.JButton btninscribir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField tfciudad;
     private javax.swing.JTextField tfestadio;
     private javax.swing.JTextField tfnombre;
-    private javax.swing.JTextField tfnombrepresi;
     // End of variables declaration//GEN-END:variables
 class Fondopanel extends JPanel{
     private Image imagen;

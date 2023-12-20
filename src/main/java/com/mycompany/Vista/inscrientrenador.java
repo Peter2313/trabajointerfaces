@@ -28,9 +28,16 @@ public class inscrientrenador extends javax.swing.JPanel {
     UIManager.put("Button.arc", 10);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
+    tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
+
     tfciudad.putClientProperty("JTextField.placeholderText", "Introduzca Ciudad");
+    tfciudad.putClientProperty("FlatLaf.style", "arc:" + 12);
+
     tfnombrepresi.putClientProperty("JTextField.placeholderText", "Nombre Presidente");
+    tfnombrepresi.putClientProperty("FlatLaf.style", "arc:" + 12);
+
     tfestadio.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
+    tfestadio.putClientProperty("FlatLaf.style", "arc:" + 12);
   }
 
   /**

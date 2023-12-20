@@ -35,7 +35,7 @@ public class recuemail extends javax.swing.JFrame {
 
     btnrecu.putClientProperty("JButton.buttonType", "roundRect");
 
-    tfemail.putClientProperty("JComponent.roundRect", true);
+    tfemail.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfemail.putClientProperty("JTextField.placeholderText", "Introduzca Email");
   }
 

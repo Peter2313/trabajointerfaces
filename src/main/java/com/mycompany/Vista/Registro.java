@@ -26,22 +26,22 @@ public class Registro extends javax.swing.JFrame {
     initComponents();
     labelcreateaccount.putClientProperty("FlatLaf.style", "font: $h0.font");
 
-    tfusername.putClientProperty("JComponent.roundRect", true);
+    tfusername.putClientProperty("FlatLaf.style", "arc:" + 12);
     // UIManager.put( "TextComponent.arc", 999 );
     tfusername.putClientProperty("JTextField.placeholderText", "Introduzca usuario");
 
-    tfpassword.putClientProperty("JComponent.roundRect", true);
+    tfpassword.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfpassword.putClientProperty("JTextField.placeholderText", "Introduzca contraseña");
 
     btnregi.putClientProperty("JButton.buttonType", "roundRect");
 
-    tfnombre.putClientProperty("JComponent.roundRect", true);
+    tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca Nombre");
 
-    tfapellidos.putClientProperty("JComponent.roundRect", true);
+    tfapellidos.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfapellidos.putClientProperty("JTextField.placeholderText", "Introduzca Apellidos");
 
-    tfemail.putClientProperty("JComponent.roundRect", true);
+    tfemail.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfemail.putClientProperty("JTextField.placeholderText", "Introduzca Email");
 
   }

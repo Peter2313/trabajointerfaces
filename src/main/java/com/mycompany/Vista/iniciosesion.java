@@ -27,11 +27,11 @@ public class iniciosesion extends javax.swing.JFrame {
   public iniciosesion() {
     initComponents();
     labelsig.putClientProperty("FlatLaf.style", "font: $h0.font");
-    tfusername.putClientProperty("JComponent.roundRect", true);
+    tfusername.putClientProperty("FlatLaf.style", "arc:" + 12);
     // UIManager.put( "TextComponent.arc", 999 );
     tfusername.putClientProperty("JTextField.placeholderText", "Introduzca usuario");
 
-    tfpassword.putClientProperty("JComponent.roundRect", true);
+    tfpassword.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfpassword.putClientProperty("JTextField.placeholderText", "Introduzca contraseña");
     btnini.putClientProperty("JButton.buttonType", "roundRect");
   }

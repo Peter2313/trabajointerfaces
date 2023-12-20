@@ -28,7 +28,9 @@ public class actuequipo extends javax.swing.JPanel {
     UIManager.put("Button.arc", 10);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
+    tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfestadio.putClientProperty("JTextField.placeholderText", "Introduzca Estadio");
+    tfestadio.putClientProperty("FlatLaf.style", "arc:" + 12);
 
   }
 

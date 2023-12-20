@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.Controlador;
+
 import java.util.Date;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -10,12 +11,14 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 /**
  *
- * @author ACER
+ * @author Pedro garcia Vicente
  */
 public class EmailUtil {
-    public static void sendEmail(Session session, String toEmail, String subject, String body) throws MessagingException {
+
+  public static void sendEmail(Session session, String toEmail, String subject, String body) throws MessagingException {
     try {
       MimeMessage msg = new MimeMessage(session);
       msg.addHeader("Content-type", "text/HTML; charset-UTF-8");

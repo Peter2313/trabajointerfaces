@@ -13,80 +13,79 @@ import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
- * @author Bypet
+ * @author Pedro Garcia Vicente
  */
 public class sqlhelperloginregister {
-    
-    public boolean verificarCredenciales(String username, String email, String contrasena) {
-        boolean credencialesValidas = false;
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        Session sesion = sessionFactory.openSession();
-        Transaction tx = sesion.beginTransaction();
 
-        try {
-            // Crear la consulta HQL
-            String hql = "FROM usuarios WHERE usuario = :usuario AND email = :email AND contrasena = :contrasena";
-            Query<Usuarios> query = sesion.createQuery(hql, Usuarios.class);
-            query.setParameter("usuario", username);
-            query.setParameter("email", email);
-            query.setParameter("contrasena", contrasena);
-            
+  public boolean verificarCredenciales(String username, String email, String contrasena) {
+    boolean credencialesValidas = false;
+    SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    Session sesion = sessionFactory.openSession();
+    Transaction tx = sesion.beginTransaction();
 
-            // Obtener el resultado de la consulta
-            Usuarios usuario = query.uniqueResult();
+    try {
+      // Crear la consulta HQL
+      String hql = "FROM usuarios WHERE usuario = :usuario AND email = :email AND contrasena = :contrasena";
+      Query<Usuarios> query = sesion.createQuery(hql, Usuarios.class);
+      query.setParameter("usuario", username);
+      query.setParameter("email", email);
+      query.setParameter("contrasena", contrasena);
 
-            // Verificar si se encontró un usuario con las credenciales proporcionadas
-            if (usuario != null) {
-                credencialesValidas = true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            tx.commit();
-            sesion.close();
-        }
+      // Obtener el resultado de la consulta
+      Usuarios usuario = query.uniqueResult();
 
-        return credencialesValidas;
+      // Verificar si se encontró un usuario con las credenciales proporcionadas
+      if (usuario != null) {
+        credencialesValidas = true;
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      tx.commit();
+      sesion.close();
     }
-    
-    public void introducirUsuario(String username, String password, String email,String nombre,String apellido) {
-        // Obtén la sesión de Hibernate
-        Session session = HibernateUtil.getSessionFactory().openSession();
 
-        // Comienza una transacción
-        Transaction transaction = null;
+    return credencialesValidas;
+  }
 
-        try {
-            // Comienza la transacción
-            transaction = session.beginTransaction();
+  public void introducirUsuario(String username, String password, String email, String nombre, String apellido) {
+    // Obtén la sesión de Hibernate
+    Session session = HibernateUtil.getSessionFactory().openSession();
 
-            // Crea un nuevo usuario y establece sus propiedades
-            Usuarios user = new Usuarios();
-            user.setUsuario(username);
-            
-            // Encripta la contraseña antes de almacenarla
-            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-            user.setContrasena(hashedPassword);
+    // Comienza una transacción
+    Transaction transaction = null;
 
-            user.setEmail(email);
+    try {
+      // Comienza la transacción
+      transaction = session.beginTransaction();
 
-            user.setNombre(nombre);
-            
-            user.setApellidos(apellido);
-            // Guarda el usuario en la base de datos
-            session.save(user);
+      // Crea un nuevo usuario y establece sus propiedades
+      Usuarios user = new Usuarios();
+      user.setUsuario(username);
 
-            // Confirma la transacción
-            transaction.commit();
-        } catch (Exception e) {
-            // Si hay algún error, realiza un rollback de la transacción
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace(); // Trata el error según tus necesidades
-        } finally {
-            // Cierra la sesión de Hibernate
-            session.close();
-        }
+      // Encripta la contraseña antes de almacenarla
+      String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+      user.setContrasena(hashedPassword);
+
+      user.setEmail(email);
+
+      user.setNombre(nombre);
+
+      user.setApellidos(apellido);
+      // Guarda el usuario en la base de datos
+      session.save(user);
+
+      // Confirma la transacción
+      transaction.commit();
+    } catch (Exception e) {
+      // Si hay algún error, realiza un rollback de la transacción
+      if (transaction != null) {
+        transaction.rollback();
+      }
+      e.printStackTrace(); // Trata el error según tus necesidades
+    } finally {
+      // Cierra la sesión de Hibernate
+      session.close();
     }
+  }
 }

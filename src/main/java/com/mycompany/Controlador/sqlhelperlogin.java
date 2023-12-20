@@ -13,13 +13,11 @@ import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
- * @author Bypet
+ * @author Pedro Garcia Vicente
  */
 public class sqlhelperlogin {
-    
-    
-    
-    /*// Método para obtener un usuario por nombre de usuario
+
+  /*// Método para obtener un usuario por nombre de usuario
     private Usuarios obtenerUsuarioPorUsername(String username) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session sesion = sessionFactory.openSession();
@@ -37,29 +35,28 @@ public class sqlhelperlogin {
             sesion.close();
         }
     }*/
-    
-    // Método para obtener la contraseña de un usuario específico
-    public String obtenerContrasenaDeUsuario(String username) {
+  // Método para obtener la contraseña de un usuario específico
+  public String obtenerContrasenaDeUsuario(String username) {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session sesion = sessionFactory.openSession();
 
     try {
-        String hql = "SELECT u.contrasena FROM Usuarios u WHERE u.usuario = :usuario";
-        Query<String> query = sesion.createQuery(hql, String.class);
-        query.setParameter("usuario", username);
+      String hql = "SELECT u.contrasena FROM Usuarios u WHERE u.usuario = :usuario";
+      Query<String> query = sesion.createQuery(hql, String.class);
+      query.setParameter("usuario", username);
 
-        return query.uniqueResult();
+      return query.uniqueResult();
     } catch (Exception e) {
-        e.printStackTrace();
-        return null;
+      e.printStackTrace();
+      return null;
     } finally {
-        sesion.close();
+      sesion.close();
     }
-}
-    
-    // Método para verificar si la contraseña coincide (puedes usar BCrypt)
-    public boolean verificarContrasena(String contrasenaInput, String contrasenaAlmacenada) {
-        // Implementa aquí la lógica para verificar la contraseña (puedes usar BCrypt)
-        return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); // Esto es solo un ejemplo, debes utilizar una función de verificación segura
-    }
+  }
+
+  // Método para verificar si la contraseña coincide (puedes usar BCrypt)
+  public boolean verificarContrasena(String contrasenaInput, String contrasenaAlmacenada) {
+    // Implementa aquí la lógica para verificar la contraseña (puedes usar BCrypt)
+    return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); // Esto es solo un ejemplo, debes utilizar una función de verificación segura
+  }
 }

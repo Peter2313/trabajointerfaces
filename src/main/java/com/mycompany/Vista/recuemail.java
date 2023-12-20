@@ -137,6 +137,7 @@ public class recuemail extends javax.swing.JFrame {
     boolean existe = cemail.verificarEmail(mail);
 
     if (existe) {
+      String nuevac = cemail.generarContrasena(8, 20);
       final String fromemail = "pedro.garvic@educa.jcyl.es";
       final String password = "Pedro2327";
       final String toemail = mail;
@@ -156,17 +157,21 @@ public class recuemail extends javax.swing.JFrame {
       Session session = Session.getDefaultInstance(props, auth);
       System.out.println("Session created");
       try {
-        EmailUtil.sendEmail(session, toemail, "SSLEmail Testing Subject", "SSLEmail Testing Body");
+        EmailUtil.sendEmail(session, toemail, "SSLEmail Testing Subject", nuevac);
       } catch (MessagingException ex) {
         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
       }
+      JOptionPane.showMessageDialog(rootPane, "Se le ha enviado el correo de recuperar contraseña");
+      cemail.actualizarContrasena(mail, nuevac);
+      if (loginn == null) {
+        loginn = new iniciosesion();
+        loginn.setVisible(true);
+      }
+      dispose();
     } else {
       JOptionPane.showMessageDialog(rootPane, "No existe el correo en la base de datos");
     }
 
-    loginn = new iniciosesion();
-    loginn.setVisible(true);
-    dispose();
     }//GEN-LAST:event_btnrecuActionPerformed
 
     private void tfemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfemailActionPerformed

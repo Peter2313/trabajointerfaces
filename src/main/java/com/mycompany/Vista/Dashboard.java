@@ -18,9 +18,8 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-
 /**
- * @author Bypet
+ * @author pedro Garcia vicente
  */
 public class Dashboard extends javax.swing.JFrame {
 
@@ -39,7 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
     /*Configuration configuracion = new Configuration();
     configuracion.configure("/hibernate.cfg.xml");
     this.sessionFactory = configuracion.buildSessionFactory();
-    
+
     try (Session session = sessionFactory.openSession()) {
       Transaction transaction = session.beginTransaction();
 
@@ -54,7 +53,7 @@ public class Dashboard extends javax.swing.JFrame {
       // Manejar la excepción según tus necesidades
     }*/
 
-    /* //---- buttonGroup1 ----
+ /* //---- buttonGroup1 ----
     ButtonGroup buttonGroup1 = new ButtonGroup();
     buttonGroup1.add(jToggleButton2);
     buttonGroup1.add(jToggleButton3);

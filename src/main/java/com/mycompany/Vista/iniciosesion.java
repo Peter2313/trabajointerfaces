@@ -12,15 +12,15 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Bypet
+ * @author pedro Garcia vicente
  */
 public class iniciosesion extends javax.swing.JFrame {
 
   private Registro regis;
-  private sqlhelperlogin sql= new sqlhelperlogin();
+  private sqlhelperlogin sql = new sqlhelperlogin();
   private Dashboard dash;
   private recuemail recu;
-  
+
   /**
    * Creates new form iniciosesion
    */
@@ -172,46 +172,43 @@ public class iniciosesion extends javax.swing.JFrame {
   }//GEN-LAST:event_labelregistroMouseClicked
 
     private void btniniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniActionPerformed
-        // TODO add your handling code here:
-       String usu = tfusername.getText();
-        String cont = tfpassword.getText();
+    // TODO add your handling code here:
+    String usu = tfusername.getText();
+    String cont = tfpassword.getText();
     try {
-        // Obtener la contraseña almacenada del usuario
-        String contrasenaAlmacenada = sql.obtenerContrasenaDeUsuario(usu);
+      // Obtener la contraseña almacenada del usuario
+      String contrasenaAlmacenada = sql.obtenerContrasenaDeUsuario(usu);
 
-        // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
-        boolean comprueba = sql.verificarContrasena(cont, contrasenaAlmacenada);
+      // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
+      boolean comprueba = sql.verificarContrasena(cont, contrasenaAlmacenada);
 
-        if (!comprueba) {
-            JOptionPane.showMessageDialog(rootPane, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
-        } else {
-            
-            //// Si el inicio de sesión es exitoso, guarda el usuario
-            Usuarios user = new Usuarios();
-            user.setUsuario(usu);
-           
-           // Acceder al usuario guardado esto en otro frame
-            //String usuario = MiClase.getUsuarioActual();
-            // Usa el valor del usuario como sea necesario en este otro frame
+      if (!comprueba) {
+        JOptionPane.showMessageDialog(rootPane, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
+      } else {
 
-            
-            
-            dispose();
-            // para ir a la otra ventana
-            Dashboard dash = new Dashboard();
-            // cerrar o esconder antes de abrir principal
-            dash.setVisible(true);
-        }
+        //// Si el inicio de sesión es exitoso, guarda el usuario
+        Usuarios user = new Usuarios();
+        user.setUsuario(usu);
+
+        // Acceder al usuario guardado esto en otro frame
+        //String usuario = MiClase.getUsuarioActual();
+        // Usa el valor del usuario como sea necesario en este otro frame
+        dispose();
+        // para ir a la otra ventana
+        Dashboard dash = new Dashboard();
+        // cerrar o esconder antes de abrir principal
+        dash.setVisible(true);
+      }
     } catch (Exception e) {
-        e.printStackTrace();
+      e.printStackTrace();
     }
     }//GEN-LAST:event_btniniActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-        recu = new recuemail();
-        recu.setVisible(true);
-        dispose();
+    // TODO add your handling code here:
+    recu = new recuemail();
+    recu.setVisible(true);
+    dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
   /**

@@ -12,7 +12,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Bypet
+ * @author pedro Garcia vicente
  */
 public class inscrientrenador extends javax.swing.JPanel {
 

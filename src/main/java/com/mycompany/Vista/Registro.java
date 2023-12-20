@@ -11,13 +11,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Bypet
+ * @author pedro Garcia vicente
  */
 public class Registro extends javax.swing.JFrame {
 
   private iniciosesion ini;
   private Usuarios usu;
   private sqlhelperloginregister sql = new sqlhelperloginregister();
+
   /**
    * Creates new form Registro
    */
@@ -170,39 +171,39 @@ public class Registro extends javax.swing.JFrame {
 
   private void btnregiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregiActionPerformed
     // TODO add your handling code here:
-     String user = tfusername.getText();
-        String cont = tfpassword.getText();
-        String correo = tfemail.getText();
-        String nombre = tfnombre.getText();
-        String apellido = tfapellidos.getText();
-        if(user.isEmpty() || cont.isEmpty() || correo.isEmpty() || nombre.isEmpty() || apellido.isEmpty()) {
-        JOptionPane.showMessageDialog(rootPane, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
-    }else{
-        try {
-            boolean comprueba = sql.verificarCredenciales(user, cont, correo);
-            if (comprueba == true) {
-                JOptionPane.showMessageDialog(rootPane, "El usuario o email ya existe en la base de datos","Error", JOptionPane.ERROR_MESSAGE);
-                tfusername.setText("");
-                tfpassword.setText("");
-                tfemail.setText("");
-            }else{
-                sql.introducirUsuario(user, cont, correo,nombre,apellido);
-                JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");
-                tfusername.setText("");
-                tfpassword.setText("");
-                tfemail.setText("");
-                tfnombre.setText("");
-                tfapellidos.setText("");
-                
-                ini = new iniciosesion();
-                ini.setVisible(true);
-                dispose();
-            }
-        }catch (ClassCastException e) {
-            e.printStackTrace();
+    String user = tfusername.getText();
+    String cont = tfpassword.getText();
+    String correo = tfemail.getText();
+    String nombre = tfnombre.getText();
+    String apellido = tfapellidos.getText();
+    if (user.isEmpty() || cont.isEmpty() || correo.isEmpty() || nombre.isEmpty() || apellido.isEmpty()) {
+      JOptionPane.showMessageDialog(rootPane, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+    } else {
+      try {
+        boolean comprueba = sql.verificarCredenciales(user, cont, correo);
+        if (comprueba == true) {
+          JOptionPane.showMessageDialog(rootPane, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+          tfusername.setText("");
+          tfpassword.setText("");
+          tfemail.setText("");
+        } else {
+          sql.introducirUsuario(user, cont, correo, nombre, apellido);
+          JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");
+          tfusername.setText("");
+          tfpassword.setText("");
+          tfemail.setText("");
+          tfnombre.setText("");
+          tfapellidos.setText("");
+
+          ini = new iniciosesion();
+          ini.setVisible(true);
+          dispose();
         }
+      } catch (ClassCastException e) {
+        e.printStackTrace();
+      }
     }
-   
+
   }//GEN-LAST:event_btnregiActionPerformed
 
   /**

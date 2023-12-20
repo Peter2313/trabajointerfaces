@@ -36,7 +36,7 @@ public class Dashboard extends javax.swing.JFrame {
     mostrarpanel(new inicio());
     //btnmenu.putClientProperty("JButton.buttonType", "arc:5");
     UIManager.put("Button.arc", 5);
-    Configuration configuracion = new Configuration();
+    /*Configuration configuracion = new Configuration();
     configuracion.configure("/hibernate.cfg.xml");
     this.sessionFactory = configuracion.buildSessionFactory();
     
@@ -52,7 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
     } catch (Exception e) {
       e.printStackTrace();
       // Manejar la excepción según tus necesidades
-    }
+    }*/
 
     /* //---- buttonGroup1 ----
     ButtonGroup buttonGroup1 = new ButtonGroup();

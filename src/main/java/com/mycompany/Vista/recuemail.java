@@ -5,6 +5,17 @@
 package com.mycompany.Vista;
 
 import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
+import com.mycompany.Controlador.ControladorEmail;
+import com.mycompany.Controlador.EmailUtil;
+import java.security.Principal;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.Authenticator;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,6 +26,9 @@ public class recuemail extends javax.swing.JFrame {
     /**
      * Creates new form recuemail
      */
+     private iniciosesion loginn;
+     private ControladorEmail cemail = new ControladorEmail();
+     
     public recuemail() {
         initComponents();
         labelrpassw.putClientProperty("FlatLaf.style", "font: $h0.font");
@@ -121,6 +135,40 @@ public class recuemail extends javax.swing.JFrame {
 
     private void btnrecuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrecuActionPerformed
         // TODO add your handling code here:
+        String mail = tfemail.getText();
+        boolean existe = cemail.verificarEmail(mail);
+
+        if (existe) {
+            final String fromemail = "pedro.garvic@educa.jcyl.es";
+        final String password = "Pedro2327";
+        final String toemail = mail;
+        System.out.println("SSLEmail Start");
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp-mail.outlook.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+
+        Authenticator auth = new Authenticator() {
+          protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(fromemail, password);
+          }
+        };
+
+        Session session = Session.getDefaultInstance(props, auth);
+        System.out.println("Session created");
+        try {
+            EmailUtil.sendEmail(session, toemail, "SSLEmail Testing Subject", "SSLEmail Testing Body");
+        } catch (MessagingException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No existe el correo en la base de datos");
+        }
+        
+            loginn = new iniciosesion();
+            loginn.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnrecuActionPerformed
 
     private void tfemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfemailActionPerformed

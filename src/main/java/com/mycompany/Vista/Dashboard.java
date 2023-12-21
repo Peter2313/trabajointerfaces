@@ -231,18 +231,22 @@ public class Dashboard extends javax.swing.JFrame {
 
   private void btninscrientrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrientrenadorActionPerformed
     // TODO add your handling code here:
+    mostrarpanel(new inscrientrenador());
   }//GEN-LAST:event_btninscrientrenadorActionPerformed
 
   private void btnborrarentreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarentreActionPerformed
     // TODO add your handling code here:
+    mostrarpanel(new borrarentrenador());
   }//GEN-LAST:event_btnborrarentreActionPerformed
 
   private void btninscrijugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrijugadoresActionPerformed
     // TODO add your handling code here:
+    mostrarpanel(new inscrijugador());
   }//GEN-LAST:event_btninscrijugadoresActionPerformed
 
   private void btnactualizarjugaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarjugaActionPerformed
     // TODO add your handling code here:
+    mostrarpanel(new actujugador());
   }//GEN-LAST:event_btnactualizarjugaActionPerformed
 
   /**

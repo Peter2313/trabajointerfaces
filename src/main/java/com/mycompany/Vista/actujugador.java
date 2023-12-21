@@ -14,7 +14,7 @@ import javax.swing.UIManager;
  *
  * @author pedro Garcia vicente
  */
-public class inscrientrenador extends javax.swing.JPanel {
+public class actujugador extends javax.swing.JPanel {
 
   /**
    * Creates new form inicio
@@ -22,19 +22,14 @@ public class inscrientrenador extends javax.swing.JPanel {
   Fondopanel fondo = new Fondopanel();
   Fondopanelmedio fondop = new Fondopanelmedio();
 
-  public inscrientrenador() {
+  public actujugador() {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
-    tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre entrenador");
+    tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre Jugador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
-
-    tfclocal.putClientProperty("JTextField.placeholderText", "Introduzca Camiseta local");
-    tfclocal.putClientProperty("FlatLaf.style", "arc:" + 12);
-
-    tfcvisitante.putClientProperty("JTextField.placeholderText", "Introduzca Camiseta Visitante");
-    tfcvisitante.putClientProperty("FlatLaf.style", "arc:" + 12);
+   
 
   }
 
@@ -48,13 +43,9 @@ public class inscrientrenador extends javax.swing.JPanel {
         jPanel1 = new Fondopanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new Fondopanelmedio();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btninscribir = new javax.swing.JButton();
+        btnactujugador = new javax.swing.JButton();
         tfnombre = new javax.swing.JTextField();
-        tfclocal = new javax.swing.JTextField();
-        tfcvisitante = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1160, 900));
 
@@ -63,79 +54,48 @@ public class inscrientrenador extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("INSCRIBIR ENTRENADOR");
+        jLabel1.setText("ACTUALIZAR JUGADOR");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setPreferredSize(new java.awt.Dimension(853, 780));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Camiseta Local(color)");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Camiseta Visitante(color)");
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nombre Completo del Entrenador");
+        jLabel5.setText("Nombre Jugador");
 
-        btninscribir.setBackground(new java.awt.Color(98, 75, 255));
-        btninscribir.setForeground(new java.awt.Color(255, 255, 255));
-        btninscribir.setText("Inscribir entrenador");
-        btninscribir.setBorder(null);
-        btninscribir.setBorderPainted(false);
+        btnactujugador.setBackground(new java.awt.Color(98, 75, 255));
+        btnactujugador.setForeground(new java.awt.Color(255, 255, 255));
+        btnactujugador.setText("Actualizar Jugador");
+        btnactujugador.setBorder(null);
+        btnactujugador.setBorderPainted(false);
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
-
-        tfclocal.setPreferredSize(new java.awt.Dimension(263, 42));
-
-        tfcvisitante.setPreferredSize(new java.awt.Dimension(263, 42));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(147, 147, 147)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(95, 95, 95)
-                                .addComponent(jLabel5)))
-                        .addGap(134, 134, 134)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfcvisitante, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfclocal, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(144, 144, 144)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(364, 364, 364))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addGap(226, 226, 226)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(tfclocal, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(tfcvisitante, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98)
-                .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addGap(91, 91, 91)
+                .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(387, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -148,8 +108,8 @@ public class inscrientrenador extends javax.swing.JPanel {
                         .addGap(142, 142, 142)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(351, 351, 351)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(371, 371, 371)
+                        .addComponent(jLabel1)))
                 .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -175,15 +135,11 @@ public class inscrientrenador extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btninscribir;
+    private javax.swing.JButton btnactujugador;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField tfclocal;
-    private javax.swing.JTextField tfcvisitante;
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 

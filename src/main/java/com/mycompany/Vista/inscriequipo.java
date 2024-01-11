@@ -5,8 +5,12 @@
 package com.mycompany.Vista;
 
 import com.mycompany.Controlador.sqlhelperinscriequipo;
+import com.mycompany.Modelo.Usuarios;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -29,6 +33,9 @@ public class inscriequipo extends javax.swing.JPanel {
   public inscriequipo() {
     //this.setContentPane(fondo);
     initComponents();
+    String nombreArchivo = "src/main/resources/nombreusuario.txt";
+    String contenidoLeido = leerDesdeArchivo(nombreArchivo);
+
     UIManager.put("Button.arc", 10);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
@@ -37,8 +44,9 @@ public class inscriequipo extends javax.swing.JPanel {
     tfciudad.putClientProperty("JTextField.placeholderText", "Introduzca Ciudad");
     tfciudad.putClientProperty("FlatLaf.style", "arc:" + 12);
 
-    tfnombrepresi.putClientProperty("JTextField.placeholderText", "Nombre Presidente");
+    //tfnombrepresi.putClientProperty("JTextField.placeholderText", "Nombre Presidente");
     tfnombrepresi.putClientProperty("FlatLaf.style", "arc:" + 12);
+    tfnombrepresi.setText(contenidoLeido);
 
     tfestadio.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
     tfestadio.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -109,6 +117,7 @@ public class inscriequipo extends javax.swing.JPanel {
 
     tfciudad.setPreferredSize(new java.awt.Dimension(263, 42));
 
+    tfnombrepresi.setEnabled(false);
     tfnombrepresi.setPreferredSize(new java.awt.Dimension(263, 42));
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -201,8 +210,8 @@ public class inscriequipo extends javax.swing.JPanel {
     String estadio = tfestadio.getText();
     String Ciudad = tfciudad.getText();
 
-    sql.inscribirEquipo(nequipo, estadio, Ciudad);
-    JOptionPane.showMessageDialog(null, "Usuario Creado correctamente");
+    //sql.inscribirEquipo(nequipo, estadio, Ciudad);
+    JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
     tfnombre.setText("");
     tfestadio.setText("");
     tfciudad.setText("");
@@ -249,5 +258,21 @@ public class inscriequipo extends javax.swing.JPanel {
 
       super.paint(g);
     }
+  }
+
+  private static String leerDesdeArchivo(String nombreArchivo) {
+    StringBuilder contenido = new StringBuilder();
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
+      String linea;
+      while ((linea = reader.readLine()) != null) {
+        contenido.append(linea);
+      }
+      System.out.println("Información leída desde el archivo: " + nombreArchivo);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    return contenido.toString();
   }
 }

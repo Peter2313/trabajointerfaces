@@ -45,7 +45,7 @@ public class sqlhelperinscriequipo {
 
         // Crear un objeto Equipo con los parámetros proporcionados
         Equipo equipo = new Equipo();
-        equipo.setUsuarios(idUsuario);
+        //equipo.setUsuarios(idUsuario);
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setCiudad(ciudad);
         equipo.setEstadio(estadio);

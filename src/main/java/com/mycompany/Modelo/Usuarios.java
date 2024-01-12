@@ -37,7 +37,6 @@ public class Usuarios implements java.io.Serializable {
   @OneToMany(mappedBy = "usuarios", cascade = CascadeType.ALL, orphanRemoval = true)
   private Set<Equipo> equipos = new HashSet<>();
 
-
   public Usuarios() {
   }
 

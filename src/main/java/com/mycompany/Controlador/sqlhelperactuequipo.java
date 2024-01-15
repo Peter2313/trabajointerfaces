@@ -68,7 +68,7 @@ public class sqlhelperactuequipo {
     return idEquipo;
   }
 
-  public static void actualizarEquipo(String nuevoNombre, String nuevoEstadio) {
+  /*public static void actualizarEquipo(String nuevoNombre, String nuevoEstadio) {
     Session session = null;
     Transaction transaction = null;
 
@@ -79,7 +79,6 @@ public class sqlhelperactuequipo {
 
       // Obtener el equipo que quieres actualizar
       Equipo equipo = session.get(Equipo.class, equipoId);
-
       // Actualizar el nombre y el estadio
       equipo.setNombreEquipo(nuevoNombre);
       equipo.setEstadio(nuevoEstadio);
@@ -102,5 +101,5 @@ public class sqlhelperactuequipo {
         session.close();
       }
     }
-  }
+  }*/
 }

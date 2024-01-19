@@ -76,6 +76,7 @@ public class inscrijugador extends javax.swing.JPanel {
         btninscribir.setText("Inscribir Jugador");
         btninscribir.setBorder(null);
         btninscribir.setBorderPainted(false);
+        btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 

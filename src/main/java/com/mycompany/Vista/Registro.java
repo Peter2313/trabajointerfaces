@@ -82,6 +82,7 @@ public class Registro extends javax.swing.JFrame {
         btnregi.setBackground(new java.awt.Color(75, 6, 99));
         btnregi.setForeground(new java.awt.Color(255, 255, 255));
         btnregi.setText("Registrarse");
+        btnregi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnregi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnregiActionPerformed(evt);

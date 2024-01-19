@@ -68,6 +68,7 @@ public class actujugador extends javax.swing.JPanel {
         btnactujugador.setText("Actualizar Jugador");
         btnactujugador.setBorder(null);
         btnactujugador.setBorderPainted(false);
+        btnactujugador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 

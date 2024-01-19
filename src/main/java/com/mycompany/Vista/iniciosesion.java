@@ -91,6 +91,7 @@ public class iniciosesion extends javax.swing.JFrame {
         btnini.setBackground(new java.awt.Color(75, 6, 99));
         btnini.setForeground(new java.awt.Color(255, 255, 255));
         btnini.setText("Iniciar Sesión");
+        btnini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnini.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btniniActionPerformed(evt);

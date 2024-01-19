@@ -69,6 +69,7 @@ public class borrarentrenador extends javax.swing.JPanel {
         btnborrar.setText("Borrar entrenador");
         btnborrar.setBorder(null);
         btnborrar.setBorderPainted(false);
+        btnborrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 

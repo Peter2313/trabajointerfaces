@@ -4,9 +4,11 @@
  */
 package com.mycompany.Vista;
 
+import com.mycompany.Controlador.sqlhelperinscrijugador;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -15,7 +17,7 @@ import javax.swing.UIManager;
  * @author pedro Garcia vicente
  */
 public class inscrijugador extends javax.swing.JPanel {
-
+private sqlhelperinscrijugador sql = new sqlhelperinscrijugador();
   /**
    * Creates new form inicio
    */
@@ -77,6 +79,11 @@ public class inscrijugador extends javax.swing.JPanel {
         btninscribir.setBorder(null);
         btninscribir.setBorderPainted(false);
         btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btninscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninscribirActionPerformed(evt);
+            }
+        });
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 
@@ -153,6 +160,19 @@ public class inscrijugador extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
+        // TODO add your handling code here:
+         String nequipo = tfnombre.getText();
+        String nombre = tfnombre.getText();
+        String dorsalText = tfdorsal.getText();
+    
+    int dorsal = Integer.parseInt(dorsalText);
+    sql.inscribirJugador( nombre, dorsal);
+    JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
+    tfnombre.setText("");
+    tfdorsal.setText("");
+    }//GEN-LAST:event_btninscribirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btninscribir;

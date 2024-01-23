@@ -4,9 +4,11 @@
  */
 package com.mycompany.Vista;
 
+import com.mycompany.Controlador.sqlhelperactujugador;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -15,7 +17,7 @@ import javax.swing.UIManager;
  * @author pedro Garcia vicente
  */
 public class actujugador extends javax.swing.JPanel {
-
+private sqlhelperactujugador sql = new sqlhelperactujugador();
   /**
    * Creates new form inicio
    */
@@ -46,6 +48,7 @@ public class actujugador extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         btnactujugador = new javax.swing.JButton();
         tfnombre = new javax.swing.JTextField();
+        jTfcambion = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1160, 900));
 
@@ -69,6 +72,11 @@ public class actujugador extends javax.swing.JPanel {
         btnactujugador.setBorder(null);
         btnactujugador.setBorderPainted(false);
         btnactujugador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnactujugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnactujugadorActionPerformed(evt);
+            }
+        });
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 
@@ -76,16 +84,18 @@ public class actujugador extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
-                .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(364, 364, 364))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTfcambion)
+                    .addComponent(tfnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(96, 96, 96))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +104,9 @@ public class actujugador extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(91, 91, 91)
+                .addGap(18, 18, 18)
+                .addComponent(jTfcambion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(387, Short.MAX_VALUE))
         );
@@ -135,12 +147,23 @@ public class actujugador extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnactujugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactujugadorActionPerformed
+        // TODO add your handling code here:
+         String njugador = tfnombre.getText();
+         String njugadorcambiar = jTfcambion.getText();
+
+    sql.actualizarJugador(njugadorcambiar,njugador);
+    JOptionPane.showMessageDialog(null, "Jugador actualizado correctamente");
+    tfnombre.setText("");
+    }//GEN-LAST:event_btnactujugadorActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnactujugador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTfcambion;
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 

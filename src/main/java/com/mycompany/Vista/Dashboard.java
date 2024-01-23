@@ -90,7 +90,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Frame.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Frame-modified.png"))); // NOI18N
         jLabel1.setText("NGALAXYSTAR");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 47, -1, -1));
 
@@ -105,7 +105,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnactualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 220, 40));
+        jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 220, 40));
 
         btnmenu.setBackground(new java.awt.Color(51, 51, 51));
         btnmenu.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,7 +118,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnmenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 220, 40));
+        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 220, 40));
 
         btninscriequipo.setBackground(new java.awt.Color(51, 51, 51));
         btninscriequipo.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,7 +131,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btninscriequipoActionPerformed(evt);
             }
         });
-        jPanel1.add(btninscriequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 220, 40));
+        jPanel1.add(btninscriequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 220, 40));
 
         btnlogout.setBackground(new java.awt.Color(51, 51, 51));
         btnlogout.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,7 +144,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnlogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnlogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 790, 220, 50));
+        jPanel1.add(btnlogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 790, 220, 50));
 
         btninscrientrenador.setBackground(new java.awt.Color(51, 51, 51));
         btninscrientrenador.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +157,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btninscrientrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btninscrientrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 220, 40));
+        jPanel1.add(btninscrientrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 220, 40));
 
         btnborrarentre.setBackground(new java.awt.Color(51, 51, 51));
         btnborrarentre.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,7 +170,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnborrarentreActionPerformed(evt);
             }
         });
-        jPanel1.add(btnborrarentre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 220, 40));
+        jPanel1.add(btnborrarentre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 220, 40));
 
         btninscrijugadores.setBackground(new java.awt.Color(51, 51, 51));
         btninscrijugadores.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,7 +183,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btninscrijugadoresActionPerformed(evt);
             }
         });
-        jPanel1.add(btninscrijugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 220, 40));
+        jPanel1.add(btninscrijugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 220, 40));
 
         btnactualizarjuga.setBackground(new java.awt.Color(51, 51, 51));
         btnactualizarjuga.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,7 +196,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnactualizarjugaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnactualizarjuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 220, 40));
+        jPanel1.add(btnactualizarjuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 220, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

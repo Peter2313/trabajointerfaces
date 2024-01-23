@@ -87,86 +87,7 @@ public class sqlhelperactuequipo {
     }
   }
 
-  /* public static int buscarEquipoPorIdUsuario(String idUsuario) {
-    int idEquipo = 0; // Valor predeterminado en caso de que no se encuentre ningún equipo
-    Session session = null;
-
-    try {
-
-      // Crear la consulta para obtener el id del equipo asociado al usuario
-      String hql = "SELECT e.id FROM Equipo e WHERE e.propietario.id = :idUsuario";
-      Query<Integer> query = session.createQuery(hql, Equipo.class);
-      query.setParameter("idUsuario", idUsuario);
-
-      // Obtener el resultado de la consulta
-      Integer result = query.uniqueResult();
-      if (result != null) {
-        idEquipo = result;
-      }
-
-    } catch (Exception e) {
-      // Manejar cualquier excepción
-      e.printStackTrace();
-    } finally {
-      // Cerrar la sesión de Hibernate
-      if (session != null) {
-        session.close();
-      }
-    }
-
-    return idEquipo;
-  }*/
- /*public void actualizarEquipo(String nuevoNombre, String nuevoEstadio) {
-    Transaction transaction = null;
-    SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-    Session session = sessionFactory.openSession();
-
-    try {
-      // Comenzar la transacción
-
-      transaction = session.beginTransaction();
-
-      // Obtener el usuario por nombre
-      Usuarios usuario = findById(obtenerIdUsuarioPorNombre());
-
-      if (usuario != null) {
-        Hibernate.initialize(usuario.getEquipos());
-        // Obtener la colección de equipos asociados al usuario
-        Set<Equipo> equipos = usuario.getEquipos();
-
-        if (!equipos.isEmpty()) {
-          // Tomar el primer equipo de la colección (puedes adaptarlo según tu lógica específica)
-          Equipo equipo = equipos.iterator().next();
-
-          // Actualizar el nombre y el estadio
-          equipo.setNombreEquipo(nuevoNombre);
-          equipo.setEstadio(nuevoEstadio);
-
-          // Guardar los cambios en la base de datos
-          session.update(equipo);
-
-          // Commit la transacción
-          transaction.commit();
-        } else {
-          System.out.println("No se encontraron equipos asociados al usuario.");
-        }
-      } else {
-        System.out.println("Usuario no encontrado.");
-      }
-    } catch (Exception e) {
-      // Manejar cualquier excepción
-      if (transaction != null) {
-        transaction.rollback();
-      }
-      e.printStackTrace();
-    }
-    /*finally {
-      // Cerrar la sesión de Hibernate
-      if (session != null) {
-        session.close();
-      }
-    }
-  }*/
+  
   public void actualizarEquipo(String nuevoNombre, String nuevoEstadio) {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -181,7 +102,7 @@ public class sqlhelperactuequipo {
 
       if (usuario != null) {
 
-        // Obtener la colección de equipos asociados al usuario
+        // 
         Equipo equipo = Usuarios.findByEquipo(usuario);
         System.out.println(equipo);
 
@@ -193,7 +114,7 @@ public class sqlhelperactuequipo {
         session.update(equipo);
         transaction.commit();
 
-        // Commit la transacción
+        
 
       } else {
         System.out.println("Usuario no encontrado.");

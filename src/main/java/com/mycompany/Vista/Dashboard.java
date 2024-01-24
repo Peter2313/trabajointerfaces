@@ -35,25 +35,8 @@ public class Dashboard extends javax.swing.JFrame {
     mostrarpanel(new inicio());
     //btnmenu.putClientProperty("JButton.buttonType", "arc:5");
     UIManager.put("Button.arc", 5);
-    /*Configuration configuracion = new Configuration();
-    configuracion.configure("/hibernate.cfg.xml");
-    this.sessionFactory = configuracion.buildSessionFactory();
 
-    try (Session session = sessionFactory.openSession()) {
-      Transaction transaction = session.beginTransaction();
-
-      // Consulta HQL para obtener todos los usuarios
-      String hql = "FROM Usuarios";
-      Query<Usuarios> query = session.createQuery(hql, Usuarios.class);
-      List<Usuarios> usuarios = query.list();
-      usuarios.forEach(System.out::println);
-      transaction.commit();
-    } catch (Exception e) {
-      e.printStackTrace();
-      // Manejar la excepción según tus necesidades
-    }*/
-
- /* //---- buttonGroup1 ----
+    /* //---- buttonGroup1 ----
     ButtonGroup buttonGroup1 = new ButtonGroup();
     buttonGroup1.add(jToggleButton2);
     buttonGroup1.add(jToggleButton3);
@@ -216,42 +199,81 @@ public class Dashboard extends javax.swing.JFrame {
     pack();
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new actuequipo());
   }//GEN-LAST:event_btnactualizarActionPerformed
 
+  /**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new inicio());
   }//GEN-LAST:event_btnmenuActionPerformed
 
+  /**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btninscriequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscriequipoActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new inscriequipo());
   }//GEN-LAST:event_btninscriequipoActionPerformed
 
+  /**
+   * boton para cerrar la sesion
+   *
+   * @param evt
+   */
   private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
     // TODO add your handling code here:
     System.exit(0);
   }//GEN-LAST:event_btnlogoutActionPerformed
 
+  /**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btninscrientrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrientrenadorActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new inscrientrenador());
   }//GEN-LAST:event_btninscrientrenadorActionPerformed
 
+  /**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btnborrarentreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarentreActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new borrarentrenador());
   }//GEN-LAST:event_btnborrarentreActionPerformed
 
+  /**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btninscrijugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscrijugadoresActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new inscrijugador());
   }//GEN-LAST:event_btninscrijugadoresActionPerformed
 
+  /**
+   * boton para ir a un panel
+   *
+   * @param evt
+   */
   private void btnactualizarjugaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarjugaActionPerformed
     // TODO add your handling code here:
     mostrarpanel(new actujugador());
@@ -293,6 +315,11 @@ public class Dashboard extends javax.swing.JFrame {
     });
   }
 
+  /**
+   * Este metodo se llama para que muestre en el panel a los paneles que llamo
+   *
+   * @param p
+   */
   private void mostrarpanel(JPanel p) {
     p.setSize(1160, 900);
     p.setLocation(0, 0);

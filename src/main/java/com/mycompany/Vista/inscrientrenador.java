@@ -17,7 +17,8 @@ import javax.swing.UIManager;
  * @author pedro Garcia vicente
  */
 public class inscrientrenador extends javax.swing.JPanel {
-private sqlhelperinscrientrenador sql = new sqlhelperinscrientrenador();
+
+  private sqlhelperinscrientrenador sql = new sqlhelperinscrientrenador();
   /**
    * Creates new form inicio
    */
@@ -181,14 +182,18 @@ private sqlhelperinscrientrenador sql = new sqlhelperinscrientrenador();
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton esa para inscribir entrenador y le paso los datos introducidos a un controlador para que lo meta en la base de datos
+   *
+   * @param evt
+   */
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
-        // TODO add your handling code here:
-          String nombrenetrenador = tfnombre.getText();
-        String clocalcolor = tfclocal.getText();
-        String cvisitante = tfcvisitante.getText();
-    
-    sql.inscribirentrenador(nombrenetrenador, clocalcolor,cvisitante);
+    // TODO add your handling code here:
+    String nombrenetrenador = tfnombre.getText();
+    String clocalcolor = tfclocal.getText();
+    String cvisitante = tfcvisitante.getText();
+
+    sql.inscribirentrenador(nombrenetrenador, clocalcolor, cvisitante);
     JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
     tfnombre.setText("");
     tfclocal.setText("");
@@ -208,6 +213,9 @@ private sqlhelperinscrientrenador sql = new sqlhelperinscrientrenador();
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;
@@ -222,6 +230,9 @@ private sqlhelperinscrientrenador sql = new sqlhelperinscrientrenador();
     }
   }
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanelmedio extends JPanel {
 
     private Image imagen;

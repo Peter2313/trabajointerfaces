@@ -17,7 +17,8 @@ import javax.swing.UIManager;
  * @author pedro Garcia vicente
  */
 public class inscrijugador extends javax.swing.JPanel {
-private sqlhelperinscrijugador sql = new sqlhelperinscrijugador();
+
+  private sqlhelperinscrijugador sql = new sqlhelperinscrijugador();
   /**
    * Creates new form inicio
    */
@@ -160,15 +161,19 @@ private sqlhelperinscrijugador sql = new sqlhelperinscrijugador();
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton esa para inscribir Jugador y le paso los datos introducidos a un controlador para que lo meta en la base de datos
+   *
+   * @param evt
+   */
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
-        // TODO add your handling code here:
-         String nequipo = tfnombre.getText();
-        String nombre = tfnombre.getText();
-        String dorsalText = tfdorsal.getText();
-    
+    // TODO add your handling code here:
+    String nequipo = tfnombre.getText();
+    String nombre = tfnombre.getText();
+    String dorsalText = tfdorsal.getText();
+
     int dorsal = Integer.parseInt(dorsalText);
-    sql.inscribirJugador( nombre, dorsal);
+    sql.inscribirJugador(nombre, dorsal);
     JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
     tfnombre.setText("");
     tfdorsal.setText("");
@@ -185,6 +190,9 @@ private sqlhelperinscrijugador sql = new sqlhelperinscrijugador();
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;
@@ -199,6 +207,9 @@ private sqlhelperinscrijugador sql = new sqlhelperinscrijugador();
     }
   }
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanelmedio extends JPanel {
 
     private Image imagen;

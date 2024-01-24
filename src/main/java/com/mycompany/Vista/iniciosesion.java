@@ -156,6 +156,11 @@ public class iniciosesion extends javax.swing.JFrame {
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * cuando clickes en el label que pone registrar te llevara al frame (Pantalla) de registrar
+   *
+   * @param evt
+   */
   private void labelregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelregistroMouseClicked
     // TODO add your handling code here:
     regis = new Registro();
@@ -163,6 +168,11 @@ public class iniciosesion extends javax.swing.JFrame {
     dispose();
   }//GEN-LAST:event_labelregistroMouseClicked
 
+  /**
+   * Este metodo se encarga de mandar el usuario y contraseña al controlador para poder mirar si esta en la base de datos e iniciar sesion.
+   *
+   * @param evt
+   */
     private void btniniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniActionPerformed
     // TODO add your handling code here:
     String usu = tfusername.getText();
@@ -204,6 +214,11 @@ public class iniciosesion extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btniniActionPerformed
 
+  /**
+   * Este label se utiliza para ir al frame de recuperar contraseña
+   *
+   * @param evt
+   */
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
     // TODO add your handling code here:
     recu = new recuemail();

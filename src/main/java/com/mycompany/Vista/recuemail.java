@@ -140,7 +140,11 @@ public class recuemail extends javax.swing.JFrame {
     pack();
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton lo que hace es recoger el email y mandarlo al controlador para saber si el emai esta en la base de datos y si esta te manda el correo
+   *
+   * @param evt
+   */
     private void btnrecuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrecuActionPerformed
     // TODO add your handling code here:
     String mail = tfemail.getText();
@@ -188,6 +192,11 @@ public class recuemail extends javax.swing.JFrame {
     // TODO add your handling code here:
     }//GEN-LAST:event_tfemailActionPerformed
 
+  /**
+   * Es un boton para volver al inicio sesion
+   *
+   * @param evt
+   */
   private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
     // TODO add your handling code here:
     loginn = new iniciosesion();

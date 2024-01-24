@@ -17,7 +17,8 @@ import javax.swing.UIManager;
  * @author pedro Garcia vicente
  */
 public class actujugador extends javax.swing.JPanel {
-private sqlhelperactujugador sql = new sqlhelperactujugador();
+
+  private sqlhelperactujugador sql = new sqlhelperactujugador();
   /**
    * Creates new form inicio
    */
@@ -31,7 +32,6 @@ private sqlhelperactujugador sql = new sqlhelperactujugador();
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre Jugador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
-   
 
   }
 
@@ -146,13 +146,17 @@ private sqlhelperactujugador sql = new sqlhelperactujugador();
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton es para actualizar el equipo le paso los datos a un controlador
+   *
+   * @param evt
+   */
     private void btnactujugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactujugadorActionPerformed
-        // TODO add your handling code here:
-         String njugador = tfnombre.getText();
-         String njugadorcambiar = jTfcambion.getText();
+    // TODO add your handling code here:
+    String njugador = tfnombre.getText();
+    String njugadorcambiar = jTfcambion.getText();
 
-    sql.actualizarJugador(njugadorcambiar,njugador);
+    sql.actualizarJugador(njugadorcambiar, njugador);
     JOptionPane.showMessageDialog(null, "Jugador actualizado correctamente");
     tfnombre.setText("");
     }//GEN-LAST:event_btnactujugadorActionPerformed
@@ -167,6 +171,9 @@ private sqlhelperactujugador sql = new sqlhelperactujugador();
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;
@@ -181,6 +188,9 @@ private sqlhelperactujugador sql = new sqlhelperactujugador();
     }
   }
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanelmedio extends JPanel {
 
     private Image imagen;

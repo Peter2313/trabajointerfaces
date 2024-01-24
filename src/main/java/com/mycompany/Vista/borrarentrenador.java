@@ -30,8 +30,6 @@ public class borrarentrenador extends javax.swing.JPanel {
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre entrenador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
 
-    
-
   }
 
   /**
@@ -145,6 +143,9 @@ public class borrarentrenador extends javax.swing.JPanel {
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;
@@ -159,6 +160,9 @@ public class borrarentrenador extends javax.swing.JPanel {
     }
   }
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanelmedio extends JPanel {
 
     private Image imagen;

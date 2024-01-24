@@ -198,7 +198,11 @@ public class inscriequipo extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton esa para inscribir Equipo y le paso los datos introducidos a un controlador para que lo meta en la base de datos
+   *
+   * @param evt
+   */
   private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
     // TODO add your handling code here:
     String nequipo = tfnombre.getText();
@@ -227,6 +231,9 @@ public class inscriequipo extends javax.swing.JPanel {
     private javax.swing.JTextField tfnombrepresi;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;
@@ -241,6 +248,9 @@ public class inscriequipo extends javax.swing.JPanel {
     }
   }
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanelmedio extends JPanel {
 
     private Image imagen;

@@ -157,7 +157,11 @@ public class Registro extends javax.swing.JFrame {
     pack();
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton lo que hace es recoger los datos de los textfield y mandarlos al controlador para que registre al usuario en mi base de datos
+   *
+   * @param evt
+   */
   private void btnregiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregiActionPerformed
     // TODO add your handling code here:
     String user = tfusername.getText();
@@ -195,6 +199,11 @@ public class Registro extends javax.swing.JFrame {
 
   }//GEN-LAST:event_btnregiActionPerformed
 
+  /**
+   * Este boton solo es para volver al frame de iniciar sesion por si no quieres registrarte
+   *
+   * @param evt
+   */
   private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
     // TODO add your handling code here:
     ini = new iniciosesion();

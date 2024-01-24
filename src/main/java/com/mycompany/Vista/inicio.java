@@ -136,6 +136,9 @@ public class inicio extends javax.swing.JPanel {
     private javax.swing.JLabel labelreglas;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;

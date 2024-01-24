@@ -18,7 +18,7 @@ import javax.swing.UIManager;
  */
 public class actuequipo extends javax.swing.JPanel {
 
-    private sqlhelperactuequipo sql = new sqlhelperactuequipo();
+  private sqlhelperactuequipo sql = new sqlhelperactuequipo();
   /**
    * Creates new form inicio
    */
@@ -159,18 +159,20 @@ public class actuequipo extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * Este boton es para incribir un equipo en la base de datos y uso un controlador para pasarle los datos
+   *
+   * @param evt
+   */
   private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
     // TODO add your handling code here:
     String nequipo = tfnombre.getText();
     String estadio = tfestadio.getText();
-   
 
     sql.actualizarEquipo(nequipo, estadio);
     JOptionPane.showMessageDialog(null, "Equipo actualizado correctamente");
     tfnombre.setText("");
     tfestadio.setText("");
-    
 
   }//GEN-LAST:event_btninscribirActionPerformed
 
@@ -185,6 +187,9 @@ public class actuequipo extends javax.swing.JPanel {
     private javax.swing.JTextField tfnombre;
     // End of variables declaration//GEN-END:variables
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanel extends JPanel {
 
     private Image imagen;
@@ -199,6 +204,9 @@ public class actuequipo extends javax.swing.JPanel {
     }
   }
 
+  /**
+   * Esta clase es para meter una foto en un panel
+   */
   class Fondopanelmedio extends JPanel {
 
     private Image imagen;

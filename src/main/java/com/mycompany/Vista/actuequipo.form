@@ -113,7 +113,7 @@
                           <Component id="tfnombre" min="-2" pref="263" max="-2" attributes="0"/>
                           <Component id="tfestadio" min="-2" pref="263" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="142" max="32767" attributes="0"/>
+                      <EmptySpace pref="143" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>

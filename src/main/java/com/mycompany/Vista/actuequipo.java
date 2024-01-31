@@ -170,7 +170,7 @@ public class actuequipo extends javax.swing.JPanel {
     String estadio = tfestadio.getText();
 
     sql.actualizarEquipo(nequipo, estadio);
-    JOptionPane.showMessageDialog(null, "Equipo actualizado correctamente");
+    
     tfnombre.setText("");
     tfestadio.setText("");
 

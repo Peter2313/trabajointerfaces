@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -103,13 +104,16 @@ public class sqlhelperinscriequipo {
 
         // Commit de la transacción
         transaction.commit();
+        JOptionPane.showMessageDialog(null, "Equipo inscrito.");
         } else {
         System.out.println("Usuario no encontrado");
+        JOptionPane.showMessageDialog(null, "Usuario no encontrado");
         }
       } catch (Exception e) {
         if (transaction != null) {
           // Rollback en caso de error
           transaction.rollback();
+          JOptionPane.showMessageDialog(null, "Equipo mal inscrito.");
         }
         e.printStackTrace();
       }finally {

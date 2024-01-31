@@ -34,63 +34,57 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="22" green="22" red="22" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tfpassword" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
-                          <Component id="tfnombre" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
-                          <Component id="tfemail" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
-                          <Component id="tfapellidos" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="tfusername" min="-2" pref="242" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="96" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="labeltitulo" min="-2" max="-2" attributes="0"/>
-                      <Component id="labelcreateaccount" min="-2" pref="338" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="btnregi" min="-2" pref="178" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnvolver" min="-2" pref="179" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="tfemail" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="tfapellidos" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="tfnombre" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="tfpassword" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="tfusername" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="labeltitulo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="labeltitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="labelcreateaccount" min="-2" pref="55" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="tfusername" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="tfpassword" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="tfnombre" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="tfapellidos" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="tfemail" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnvolver" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="btnregi" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="127" max="32767" attributes="0"/>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -106,7 +100,7 @@
               <Font name="Segoe UI" size="36" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img/NGALAXYSTARf.png"/>
+              <Image iconType="3" name="/img/NGALAXYSTARb.png"/>
             </Property>
           </Properties>
         </Component>
@@ -129,22 +123,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnregiActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelcreateaccount">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Create My Account"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="tfnombre">
         </Component>
         <Component class="javax.swing.JTextField" name="tfpassword">
         </Component>
         <Component class="javax.swing.JButton" name="btnvolver">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="63" green="6" red="4b" type="rgb"/>
-            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="63" green="6" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Volver"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">

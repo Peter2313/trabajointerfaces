@@ -194,7 +194,7 @@ public class inscrientrenador extends javax.swing.JPanel {
     String cvisitante = tfcvisitante.getText();
 
     sql.inscribirentrenador(nombrenetrenador, clocalcolor, cvisitante);
-    JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
+    
     tfnombre.setText("");
     tfclocal.setText("");
     tfcvisitante.setText("");

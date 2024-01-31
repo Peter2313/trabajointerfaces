@@ -11,6 +11,7 @@ import com.mycompany.Modelo.Usuarios;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -18,10 +19,11 @@ import org.hibernate.query.Query;
 
 /**
  *
- * @author Bypet
+ * @author Pedro Garcia Vicente
  */
 public class sqlhelperinscrijugador {
-    private String nombreArchivo = "src/main/resources/nombreusuario.txt";
+
+  private String nombreArchivo = "src/main/resources/nombreusuario.txt";
   private String contenidoLeido = leerDesdeArchivo(nombreArchivo);
   private int idusuario;
 
@@ -42,8 +44,8 @@ public class sqlhelperinscrijugador {
   }
 
   public int obtenerIdUsuarioPorNombre() {
-      SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        Session session = sessionFactory.openSession();
+    SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    Session session = sessionFactory.openSession();
     try {
       // Consulta HQL para obtener el idUsuario por nombre de usuario
       String hql = "SELECT u.id FROM Usuarios u WHERE usuario = :nombreusuario";
@@ -53,98 +55,100 @@ public class sqlhelperinscrijugador {
       // Obtener el resultado de la consulta
       Integer idUsuario = query.uniqueResult();
       idusuario = idUsuario;
-       // System.out.println(idusuario);
+      // System.out.println(idusuario);
       return idusuario; // Devolver -1 si no se encuentra el usuario
     } catch (Exception e) {
       e.printStackTrace();
       return -1;
-    }finally {
+    } finally {
       session.close();
     }
   }
 
-  
   public static Usuarios findById(int id) {
-      System.out.println(id+ "metodo find");
+    System.out.println(id + "metodo find");
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-        // Consulta HQL para obtener el usuario por su id
-        String hql = "FROM Usuarios u WHERE u.id = :id";
-        return session.createQuery(hql, Usuarios.class)
-                      .setParameter("id", id)
-                      .uniqueResult();
+      // Consulta HQL para obtener el usuario por su id
+      String hql = "FROM Usuarios u WHERE u.id = :id";
+      return session.createQuery(hql, Usuarios.class)
+        .setParameter("id", id)
+        .uniqueResult();
     } catch (Exception e) {
-        e.printStackTrace();
-        return null;
+      e.printStackTrace();
+      return null;
     }
-}
-  
+  }
+
   public void inscribirJugador(String nombreJugador, int dorsal) {
     // Obtener el equipo utilizando el idEquipo proporcionado
     Equipo equipo = obtenerEquipoPorId();
 
     if (equipo != null) {
-        Transaction transaction = null;
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        Session session = sessionFactory.openSession();
+      Transaction transaction = null;
+      SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+      Session session = sessionFactory.openSession();
 
-        try {
-            // Comenzar transacción
-            transaction = session.beginTransaction();
+      try {
+        // Comenzar transacción
+        transaction = session.beginTransaction();
 
-            // Crear un objeto Jugador con los parámetros proporcionados
-            Jugadores jugador = new Jugadores();
-            jugador.setEquipo(equipo);
-            jugador.setNombrejugador(nombreJugador);
-            jugador.setDorsal(dorsal);
+        // Crear un objeto Jugador con los parámetros proporcionados
+        Jugadores jugador = new Jugadores();
+        jugador.setEquipo(equipo);
+        jugador.setNombrejugador(nombreJugador);
+        jugador.setDorsal(dorsal);
 
-            // Guardar el jugador en la base de datos
-            session.save(jugador);
+        // Guardar el jugador en la base de datos
+        session.save(jugador);
 
-            // Commit de la transacción
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                // Rollback en caso de error
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
+        // Commit de la transacción
+        transaction.commit();
+
+        JOptionPane.showMessageDialog(null, "Inscrito correctamente.");
+      } catch (Exception e) {
+        if (transaction != null) {
+          // Rollback en caso de error
+          transaction.rollback();
+          JOptionPane.showMessageDialog(null, "Erro al inscribir jugador.");
         }
+        e.printStackTrace();
+      } finally {
+        session.close();
+      }
     } else {
-        System.out.println("Equipo no encontrado");
+
+      JOptionPane.showMessageDialog(null, "Equipo no encontrado.");
     }
-}
+  }
 
 // Método para obtener un equipo por su id
-private Equipo obtenerEquipoPorId() {
+  private Equipo obtenerEquipoPorId() {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session session = sessionFactory.openSession();
 
     try {
-        // Comenzar transacción
-        transaction = session.beginTransaction();
-        
-        Usuarios usuario = findById(obtenerIdUsuarioPorNombre());
-        // Obtener el equipo por su id
-        //Equipo equipo = session.get(Equipo.class, idEquipo);
-        Equipo equipo = Usuarios.findByEquipo(usuario);
-        // Commit de la transacción
-        transaction.commit();
+      // Comenzar transacción
+      transaction = session.beginTransaction();
 
-        return equipo;
+      Usuarios usuario = findById(obtenerIdUsuarioPorNombre());
+      // Obtener el equipo por su id
+      //Equipo equipo = session.get(Equipo.class, idEquipo);
+      Equipo equipo = Usuarios.findByEquipo(usuario);
+      // Commit de la transacción
+      transaction.commit();
+
+      return equipo;
     } catch (Exception e) {
-        if (transaction != null) {
-            // Rollback en caso de error
-            transaction.rollback();
-        }
-        e.printStackTrace();
-        return null;
+      if (transaction != null) {
+        // Rollback en caso de error
+        transaction.rollback();
+      }
+      e.printStackTrace();
+      return null;
     } finally {
-        session.close();
+      session.close();
     }
-}
+  }
 
-    
 }

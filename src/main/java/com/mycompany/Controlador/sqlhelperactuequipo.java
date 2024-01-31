@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
@@ -113,16 +114,15 @@ public class sqlhelperactuequipo {
         // Guardar los cambios en la base de datos
         session.update(equipo);
         transaction.commit();
-
-        
-
+        JOptionPane.showMessageDialog(null, "Equipo actualizado.");
       } else {
-        System.out.println("Usuario no encontrado.");
+        JOptionPane.showMessageDialog(null, "Usuario no encontrado.");
       }
     } catch (Exception e) {
       // Manejar cualquier excepción
       if (transaction != null) {
         transaction.rollback();
+        JOptionPane.showMessageDialog(null, "Error al actualizar equipo.");
       }
       e.printStackTrace();
     } finally {

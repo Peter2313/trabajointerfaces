@@ -5,6 +5,7 @@
 package com.mycompany.Controlador;
 
 import com.mycompany.Modelo.Usuarios;
+import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -81,6 +82,7 @@ public class sqlhelperloginregister {
       // Si hay algún error, realiza un rollback de la transacción
       if (transaction != null) {
         transaction.rollback();
+       
       }
       e.printStackTrace(); // Trata el error según tus necesidades
     } finally {

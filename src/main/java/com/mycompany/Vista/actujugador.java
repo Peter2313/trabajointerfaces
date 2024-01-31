@@ -32,6 +32,8 @@ public class actujugador extends javax.swing.JPanel {
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre Jugador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
+    jTfcambion.putClientProperty("JTextField.placeholderText", "Introduzca nombre nuevo");
+    jTfcambion.putClientProperty("FlatLaf.style", "arc:" + 12);
 
   }
 
@@ -49,6 +51,7 @@ public class actujugador extends javax.swing.JPanel {
         btnactujugador = new javax.swing.JButton();
         tfnombre = new javax.swing.JTextField();
         jTfcambion = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1160, 900));
 
@@ -80,6 +83,10 @@ public class actujugador extends javax.swing.JPanel {
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Nombre Jugador a cambiar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -89,12 +96,18 @@ public class actujugador extends javax.swing.JPanel {
                 .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(364, 364, 364))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(128, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTfcambion)
-                    .addComponent(tfnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tfnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTfcambion))
                 .addGap(96, 96, 96))
         );
         jPanel2Layout.setVerticalGroup(
@@ -104,11 +117,13 @@ public class actujugador extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(tfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jTfcambion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTfcambion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
                 .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(343, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -157,7 +172,7 @@ public class actujugador extends javax.swing.JPanel {
     String njugadorcambiar = jTfcambion.getText();
 
     sql.actualizarJugador(njugadorcambiar, njugador);
-    JOptionPane.showMessageDialog(null, "Jugador actualizado correctamente");
+   
     tfnombre.setText("");
     }//GEN-LAST:event_btnactujugadorActionPerformed
 
@@ -165,6 +180,7 @@ public class actujugador extends javax.swing.JPanel {
     private javax.swing.JButton btnactujugador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTfcambion;

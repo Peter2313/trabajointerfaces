@@ -210,7 +210,7 @@ public class inscriequipo extends javax.swing.JPanel {
     String Ciudad = tfciudad.getText();
 
     sql.inscribirEquipo(nequipo, Ciudad, estadio);
-    JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
+    
     tfnombre.setText("");
     tfestadio.setText("");
     tfciudad.setText("");

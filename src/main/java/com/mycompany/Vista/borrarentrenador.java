@@ -4,6 +4,7 @@
  */
 package com.mycompany.Vista;
 
+import com.mycompany.Controlador.sqlhelperborrarentrenador;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -19,6 +20,7 @@ public class borrarentrenador extends javax.swing.JPanel {
   /**
    * Creates new form inicio
    */
+  private sqlhelperborrarentrenador sql = new sqlhelperborrarentrenador();
   Fondopanel fondo = new Fondopanel();
   Fondopanelmedio fondop = new Fondopanelmedio();
 
@@ -68,6 +70,11 @@ public class borrarentrenador extends javax.swing.JPanel {
         btnborrar.setBorder(null);
         btnborrar.setBorderPainted(false);
         btnborrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnborrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnborrarActionPerformed(evt);
+            }
+        });
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 
@@ -133,6 +140,15 @@ public class borrarentrenador extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarActionPerformed
+        // TODO add your handling code here:
+    String nequipo = tfnombre.getText();
+    
+    sql.borrarEntrenador(nequipo);
+    
+    tfnombre.setText("");
+    }//GEN-LAST:event_btnborrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnborrar;

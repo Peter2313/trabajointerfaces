@@ -5,6 +5,7 @@
 package com.mycompany.Controlador;
 
 import com.mycompany.Modelo.Usuarios;
+import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -48,6 +49,7 @@ public class sqlhelperlogin {
       return query.uniqueResult();
     } catch (Exception e) {
       e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta.");
       return null;
     } finally {
       sesion.close();
@@ -57,6 +59,6 @@ public class sqlhelperlogin {
   // Método para verificar si la contraseña coincide (puedes usar BCrypt)
   public boolean verificarContrasena(String contrasenaInput, String contrasenaAlmacenada) {
     // Implementa aquí la lógica para verificar la contraseña (puedes usar BCrypt)
-    return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); // Esto es solo un ejemplo, debes utilizar una función de verificación segura
+    return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); 
   }
 }

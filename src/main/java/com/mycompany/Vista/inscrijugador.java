@@ -174,7 +174,7 @@ public class inscrijugador extends javax.swing.JPanel {
 
     int dorsal = Integer.parseInt(dorsalText);
     sql.inscribirJugador(nombre, dorsal);
-    JOptionPane.showMessageDialog(null, "Equipo Creado correctamente");
+    
     tfnombre.setText("");
     tfdorsal.setText("");
     }//GEN-LAST:event_btninscribirActionPerformed

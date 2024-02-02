@@ -170,7 +170,7 @@ public class actuequipo extends javax.swing.JPanel {
     String estadio = tfestadio.getText();
 
     sql.actualizarEquipo(nequipo, estadio);
-    
+
     tfnombre.setText("");
     tfestadio.setText("");
 
@@ -195,7 +195,7 @@ public class actuequipo extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles.jpg")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles2.jpg")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);
@@ -212,7 +212,7 @@ public class actuequipo extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/panelformu.png")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/panelformu2.png")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);

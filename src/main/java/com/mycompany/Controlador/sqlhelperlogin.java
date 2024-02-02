@@ -18,24 +18,6 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class sqlhelperlogin {
 
-  /*// Método para obtener un usuario por nombre de usuario
-    private Usuarios obtenerUsuarioPorUsername(String username) {
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        Session sesion = sessionFactory.openSession();
-
-        try {
-            String hql = "FROM usuarios WHERE usuario = :usuario";
-            Query<Usuarios> query = sesion.createQuery(hql, Usuarios.class);
-            query.setParameter("usuario", username);
-
-            return query.uniqueResult();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            sesion.close();
-        }
-    }*/
   // Método para obtener la contraseña de un usuario específico
   public String obtenerContrasenaDeUsuario(String username) {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -59,6 +41,6 @@ public class sqlhelperlogin {
   // Método para verificar si la contraseña coincide (puedes usar BCrypt)
   public boolean verificarContrasena(String contrasenaInput, String contrasenaAlmacenada) {
     // Implementa aquí la lógica para verificar la contraseña (puedes usar BCrypt)
-    return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); 
+    return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada);
   }
 }

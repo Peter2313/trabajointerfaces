@@ -30,6 +30,7 @@ public class iniciosesion extends javax.swing.JFrame {
    */
   public iniciosesion() {
     initComponents();
+    getRootPane().setDefaultButton(btnini);
     tfusername.putClientProperty("FlatLaf.style", "arc:" + 12);
     // UIManager.put( "TextComponent.arc", 999 );
     tfusername.putClientProperty("JTextField.placeholderText", "Introduzca usuario");

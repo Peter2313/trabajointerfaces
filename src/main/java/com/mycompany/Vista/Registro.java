@@ -5,6 +5,7 @@
 package com.mycompany.Vista;
 
 import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
+import com.mycompany.Controlador.ValidadorEmail;
 import com.mycompany.Controlador.sqlhelperloginregister;
 import com.mycompany.Modelo.Usuarios;
 import javax.swing.JOptionPane;
@@ -169,17 +170,25 @@ public class Registro extends javax.swing.JFrame {
           tfpassword.setText("");
           tfemail.setText("");
         } else {
-          sql.introducirUsuario(user, cont, correo, nombre, apellido);
-          JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");
-          tfusername.setText("");
-          tfpassword.setText("");
-          tfemail.setText("");
-          tfnombre.setText("");
-          tfapellidos.setText("");
+          // Utilizo el ValidadorEmail para verificar el formato del correo
+          ValidadorEmail validadorEmail = new ValidadorEmail();
 
-          ini = new iniciosesion();
-          ini.setVisible(true);
-          dispose();
+          if (validadorEmail.validarEmail(correo)) {
+            sql.introducirUsuario(user, cont, correo, nombre, apellido);
+            JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");
+            tfusername.setText("");
+            tfpassword.setText("");
+            tfemail.setText("");
+            tfnombre.setText("");
+            tfapellidos.setText("");
+
+            ini = new iniciosesion();
+            ini.setVisible(true);
+            dispose();
+          } else {
+            JOptionPane.showMessageDialog(rootPane, "Formato de correo electrónico inválido", "Error", JOptionPane.ERROR_MESSAGE);
+            tfemail.setText("");
+          }
         }
       } catch (ClassCastException e) {
         e.printStackTrace();

@@ -189,15 +189,19 @@ public class inscrientrenador extends javax.swing.JPanel {
    */
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
     // TODO add your handling code here:
-    String nombrenetrenador = tfnombre.getText();
-    String clocalcolor = tfclocal.getText();
-    String cvisitante = tfcvisitante.getText();
+    if (tfnombre.getText().toString().isEmpty() || tfclocal.getText().toString().isEmpty() || tfcvisitante.getText().toString().isEmpty()) {
+      JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+    }else{
+        String nombrenetrenador = tfnombre.getText();
+        String clocalcolor = tfclocal.getText();
+        String cvisitante = tfcvisitante.getText();
 
-    sql.inscribirentrenador(nombrenetrenador, clocalcolor, cvisitante);
-    
-    tfnombre.setText("");
-    tfclocal.setText("");
-    tfcvisitante.setText("");
+        sql.inscribirentrenador(nombrenetrenador, clocalcolor, cvisitante);
+
+        tfnombre.setText("");
+        tfclocal.setText("");
+        tfcvisitante.setText("");
+        }
     }//GEN-LAST:event_btninscribirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

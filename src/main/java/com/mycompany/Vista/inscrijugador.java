@@ -168,15 +168,18 @@ public class inscrijugador extends javax.swing.JPanel {
    */
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
     // TODO add your handling code here:
-    String nequipo = tfnombre.getText();
-    String nombre = tfnombre.getText();
-    String dorsalText = tfdorsal.getText();
+    if (tfnombre.getText().toString().isEmpty() || tfdorsal.getText().toString().isEmpty()) {
+      JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+    }else{
+        String nombre = tfnombre.getText();
+        String dorsalText = tfdorsal.getText();
 
-    int dorsal = Integer.parseInt(dorsalText);
-    sql.inscribirJugador(nombre, dorsal);
-    
-    tfnombre.setText("");
-    tfdorsal.setText("");
+        int dorsal = Integer.parseInt(dorsalText);
+        sql.inscribirJugador(nombre, dorsal);
+
+        tfnombre.setText("");
+        tfdorsal.setText("");
+        }
     }//GEN-LAST:event_btninscribirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

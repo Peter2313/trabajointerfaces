@@ -8,6 +8,7 @@ import com.mycompany.Controlador.sqlhelperborrarentrenador;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -143,11 +144,15 @@ public class borrarentrenador extends javax.swing.JPanel {
 
     private void btnborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarActionPerformed
         // TODO add your handling code here:
-    String nequipo = tfnombre.getText();
-    
-    sql.borrarEntrenador(nequipo);
-    
-    tfnombre.setText("");
+     if(tfnombre.getText().toString().isEmpty()) {
+      JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+    }else{
+        String nequipo = tfnombre.getText();
+
+        sql.borrarEntrenador(nequipo);
+
+        tfnombre.setText("");
+        }
     }//GEN-LAST:event_btnborrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

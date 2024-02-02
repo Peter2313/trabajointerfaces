@@ -14,6 +14,7 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -205,6 +206,9 @@ public class inscriequipo extends javax.swing.JPanel {
    */
   private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
     // TODO add your handling code here:
+    if (tfnombre.getText().toString().isEmpty() || tfciudad.getText().toString().isEmpty() || tfestadio.getText().toString().isEmpty()) {
+      JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+    }else{
     String nequipo = tfnombre.getText();
     String estadio = tfestadio.getText();
     String Ciudad = tfciudad.getText();
@@ -214,6 +218,7 @@ public class inscriequipo extends javax.swing.JPanel {
     tfnombre.setText("");
     tfestadio.setText("");
     tfciudad.setText("");
+    }
   }//GEN-LAST:event_btninscribirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

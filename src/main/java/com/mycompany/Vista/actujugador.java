@@ -168,12 +168,17 @@ public class actujugador extends javax.swing.JPanel {
    */
     private void btnactujugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactujugadorActionPerformed
     // TODO add your handling code here:
-    String njugador = tfnombre.getText();
-    String njugadorcambiar = jTfcambion.getText();
+    if (tfnombre.getText().toString().isEmpty() || jTfcambion.getText().toString().isEmpty()) {
+      JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+    }else{
+        String njugador = tfnombre.getText();
+        String njugadorcambiar = jTfcambion.getText();
 
-    sql.actualizarJugador(njugadorcambiar, njugador);
-   
-    tfnombre.setText("");
+        sql.actualizarJugador(njugadorcambiar, njugador);
+
+        tfnombre.setText("");
+        jTfcambion.setText("");
+     }
     }//GEN-LAST:event_btnactujugadorActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

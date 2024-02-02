@@ -25,7 +25,6 @@ import javax.swing.UIManager;
 public class Dashboard extends javax.swing.JFrame {
 
   private SessionFactory sessionFactory;
- 
 
   /**
    * Creates new form Dashboard
@@ -344,208 +343,218 @@ public class Dashboard extends javax.swing.JFrame {
     // TODO add your handling code here:
     mostrarpanel(new actujugador());
   }//GEN-LAST:event_btnactualizarjugaActionPerformed
-    
+
   /**
-     * evento del boton dashboard para que cambie de color a azul
-     * @param evt 
-     */
+   * evento del boton dashboard para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btnmenuFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnmenuFocusGained
-        // TODO add your handling code here:
-        
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnmenuFocusGained
-    /**
-     * Metodo para que cambie el boton dashboard cuando ya no este focus al color por defecto
-     * @param evt 
-     */
+
+  /**
+   * Metodo para que cambie el boton dashboard cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btnmenuFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnmenuFocusLost
-        // TODO add your handling code here:
-        int red = 51;    
-        int green = 51;    
-        int blue = 51;     
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnmenuFocusLost
 
-    /**
-     * evento del boton inscribir equipo para que cambie de color a azul
-     * @param evt 
-     */
-        
+  /**
+   * evento del boton inscribir equipo para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btninscriequipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btninscriequipoFocusGained
-        // TODO add your handling code here:
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btninscriequipoFocusGained
-/**
- *  Metodo para que cambie el boton inserte equipo cuando ya no este focus al color por defecto
- * @param evt 
- */
+
+  /**
+   * Metodo para que cambie el boton inserte equipo cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btninscriequipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btninscriequipoFocusLost
-        // TODO add your handling code here:
-        int red = 51;    
-        int green = 51;   
-        int blue = 51;    
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btninscriequipoFocusLost
 
-    /**
-     * evento del boton actualizar equipo  para que cambie de color a azul
-     * @param evt 
-     */
+  /**
+   * evento del boton actualizar equipo para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btnactualizarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnactualizarFocusGained
-        // TODO add your handling code here:
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnactualizarFocusGained
 
-    /**
-     * Metodo para que cambie el boton actualizar equipo cuando ya no este focus al color por defecto
-     * @param evt 
-     */
+  /**
+   * Metodo para que cambie el boton actualizar equipo cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btnactualizarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnactualizarFocusLost
-        // TODO add your handling code here:
-        int red = 51;    
-        int green = 51;    
-        int blue = 51;     
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnactualizarFocusLost
 
-    /**
-     * evento del boton inscribir entrenador para que cambie de color a azul
-     * @param evt 
-     */
+  /**
+   * evento del boton inscribir entrenador para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btninscrientrenadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btninscrientrenadorFocusGained
-        // TODO add your handling code here:
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btninscrientrenadorFocusGained
 
-    /**
-     * Metodo para que cambie el boton inscribir entrenador  cuando ya no este focus al color por defecto
-     * @param evt 
-     */
+  /**
+   * Metodo para que cambie el boton inscribir entrenador cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btninscrientrenadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btninscrientrenadorFocusLost
-        // TODO add your handling code here:
-        int red = 51;   
-        int green = 51;    
-        int blue = 51;     
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btninscrientrenadorFocusLost
 
-    /**
-     * evento del boton borrar entrenador para que cambie de color a azul
-     * @param evt 
-     */
+  /**
+   * evento del boton borrar entrenador para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btnborrarentreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnborrarentreFocusGained
-        // TODO add your handling code here:
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnborrarentreFocusGained
 
-    /**
-     * Metodo para que cambie el boton borrar entrenador  cuando ya no este focus al color por defecto
-     * @param evt 
-     */
+  /**
+   * Metodo para que cambie el boton borrar entrenador cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btnborrarentreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnborrarentreFocusLost
-        // TODO add your handling code here:
-        int red = 51;   
-        int green = 51;    
-        int blue = 51;     
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnborrarentreFocusLost
 
-    /**
-     * evento del boton inscribir jugador para que cambie de color a azul
-     * @param evt 
-     */
+  /**
+   * evento del boton inscribir jugador para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btninscrijugadoresFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btninscrijugadoresFocusGained
-        // TODO add your handling code here:
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btninscrijugadoresFocusGained
 
-    /**
-     * Metodo para que cambie el boton inscribir jugador  cuando ya no este focus al color por defecto
-     * @param evt 
-     */
+  /**
+   * Metodo para que cambie el boton inscribir jugador cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btninscrijugadoresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btninscrijugadoresFocusLost
-        // TODO add your handling code here:
-        int red = 51;   
-        int green = 51;    
-        int blue = 51;     
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btninscrijugadoresFocusLost
 
-    /**
-     * evento del boton actualizar jugador para que cambie de color a azul
-     * @param evt 
-     */
+  /**
+   * evento del boton actualizar jugador para que cambie de color a azul
+   *
+   * @param evt
+   */
     private void btnactualizarjugaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnactualizarjugaFocusGained
-        // TODO add your handling code here:
-        int red = 0;    
-        int green = 106;   
-        int blue = 255; 
-        
-        Color color = new Color(red, green, blue);
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 0;
+    int green = 106;
+    int blue = 255;
+
+    Color color = new Color(red, green, blue);
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnactualizarjugaFocusGained
 
-    /**
-     * Metodo para que cambie el boton actualizar jugador  cuando ya no este focus al color por defecto
-     * @param evt 
-     */
+  /**
+   * Metodo para que cambie el boton actualizar jugador cuando ya no este focus al color por defecto
+   *
+   * @param evt
+   */
     private void btnactualizarjugaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnactualizarjugaFocusLost
-        // TODO add your handling code here:
-        int red = 51;   
-        int green = 51;    
-        int blue = 51;     
-        Color color = new Color(red, green, blue);
-        
-        evt.getComponent().setBackground(color);
+    // TODO add your handling code here:
+    int red = 51;
+    int green = 51;
+    int blue = 51;
+    Color color = new Color(red, green, blue);
+
+    evt.getComponent().setBackground(color);
     }//GEN-LAST:event_btnactualizarjugaFocusLost
 
-    
-    
-    
-    
-    
   /**
    * @param args the command line arguments
    */

@@ -91,8 +91,14 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="tfemail">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="email"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfusername">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="nombre usuario"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labeltitulo">
           <Properties>
@@ -105,6 +111,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfapellidos">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="apellidos del presidente"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnregi">
           <Properties>
@@ -124,8 +133,14 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfnombre">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="nombre del presidente"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfpassword">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="contrase&#xf1;a"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnvolver">
           <Properties>
@@ -133,6 +148,7 @@
               <Color blue="63" green="6" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Volver"/>
+            <Property name="toolTipText" type="java.lang.String" value="volver al login"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>

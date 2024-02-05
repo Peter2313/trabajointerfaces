@@ -111,6 +111,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfemail">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="email de la cuenta"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfemailActionPerformed"/>
           </Events>
@@ -124,6 +127,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Recuperar"/>
+            <Property name="toolTipText" type="java.lang.String" value="recuperar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -138,6 +142,7 @@
               <Color blue="63" green="6" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Volver"/>
+            <Property name="toolTipText" type="java.lang.String" value="boton volver la inicio de sesion"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>

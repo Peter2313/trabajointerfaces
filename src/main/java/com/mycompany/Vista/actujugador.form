@@ -177,12 +177,16 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tfnombre">
               <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="nombre nuevo"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[263, 42]"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTfcambion">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="nombre del jugador ya inscrito"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>

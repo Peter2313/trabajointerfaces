@@ -29,7 +29,7 @@ public class borrarentrenador extends javax.swing.JPanel {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
-    getRootPane().setDefaultButton(btnborrar);
+
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre entrenador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -144,18 +144,18 @@ public class borrarentrenador extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarActionPerformed
-        // TODO add your handling code here:
-        
-        //if para campos vacios
-     if(tfnombre.getText().toString().isEmpty()) {
+    // TODO add your handling code here:
+
+    //if para campos vacios
+    if (tfnombre.getText().toString().isEmpty()) {
       JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
-    }else{
-        String nequipo = tfnombre.getText();
+    } else {
+      String nequipo = tfnombre.getText();
 
-        sql.borrarEntrenador(nequipo);
+      sql.borrarEntrenador(nequipo);
 
-        tfnombre.setText("");
-        }
+      tfnombre.setText("");
+    }
     }//GEN-LAST:event_btnborrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

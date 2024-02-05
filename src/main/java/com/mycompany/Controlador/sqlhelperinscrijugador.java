@@ -27,10 +27,11 @@ public class sqlhelperinscrijugador {
   private String contenidoLeido = leerDesdeArchivo(nombreArchivo);
   private int idusuario;
 
-    /**
+  /**
    * Este metodo es para leer desde un archivo txt el nombre del usuario iniciado
+   *
    * @param nombreArchivo archivo txt con el nombre de usuario logeado
-   * @return  devuelve lo escrito en le txt
+   * @return devuelve lo escrito en le txt
    */
   private static String leerDesdeArchivo(String nombreArchivo) {
     StringBuilder contenido = new StringBuilder();
@@ -48,8 +49,9 @@ public class sqlhelperinscrijugador {
     return contenido.toString();
   }
 
-    /**
+  /**
    * metodo para obtener id de usuario
+   *
    * @return devuelve el id del usuario
    */
   public int obtenerIdUsuarioPorNombre() {
@@ -74,8 +76,9 @@ public class sqlhelperinscrijugador {
     }
   }
 
-    /**
-   * Este metodo es para buscar el usuario por el id 
+  /**
+   * Este metodo es para buscar el usuario por el id
+   *
    * @param id se pasa el id del usuario
    * @return devuelve el usuario
    */
@@ -92,11 +95,13 @@ public class sqlhelperinscrijugador {
       return null;
     }
   }
-    /**
-     * Metodo para inscribir jugadores
-     * @param nombreJugador nombre del jugador a inscribir
-     * @param dorsal dorsal del jugador
-     */
+
+  /**
+   * Metodo para inscribir jugadores
+   *
+   * @param nombreJugador nombre del jugador a inscribir
+   * @param dorsal dorsal del jugador
+   */
   public void inscribirJugador(String nombreJugador, int dorsal) {
     // Obtener el equipo utilizando el idEquipo proporcionado
     Equipo equipo = obtenerEquipoPorId();
@@ -138,9 +143,10 @@ public class sqlhelperinscrijugador {
       JOptionPane.showMessageDialog(null, "Equipo no encontrado.");
     }
   }
-  
+
   /**
    * Metodo para obtener cuantos jugadores tiene un equipo
+   *
    * @return devuelve el numero de jugadores
    */
   public long obtenerConteoJugadoresPorEquipo() {
@@ -149,22 +155,23 @@ public class sqlhelperinscrijugador {
     Session sesion = sessionFactory.openSession();
 
     try {
-        String hql = "SELECT COUNT(*) FROM Jugadores WHERE idequipo = :id";
-        Query<Long> query = sesion.createQuery(hql, Long.class);
-        query.setParameter("id", equipo);
-        //System.out.println(query.uniqueResult());
-        return query.uniqueResult();
+      String hql = "SELECT COUNT(*) FROM Jugadores WHERE idequipo = :id";
+      Query<Long> query = sesion.createQuery(hql, Long.class);
+      query.setParameter("id", equipo);
+      //System.out.println(query.uniqueResult());
+      return query.uniqueResult();
     } catch (Exception e) {
-        e.printStackTrace();
-        
-        return -1; 
+      e.printStackTrace();
+
+      return -1;
     } finally {
-        sesion.close();
+      sesion.close();
     }
-}
-  
+  }
+
   /**
-   *Metodo para verificar si ya en tu equipo hay un jugador con ese dorsal
+   * Metodo para verificar si ya en tu equipo hay un jugador con ese dorsal
+   *
    * @param dorsal
    * @return devulve true o false si existe o no
    */
@@ -173,28 +180,27 @@ public class sqlhelperinscrijugador {
     Session sesion = sessionFactory.openSession();
     Equipo equipo = obtenerEquipoPorId();
     try {
-        String hql = "SELECT COUNT(*) FROM Jugadores WHERE dorsal = :dorsal AND idequipo = :idEquipo";
-        Query<Long> query = sesion.createQuery(hql, Long.class);
-        query.setParameter("dorsal", dorsal);
-        query.setParameter("idEquipo", equipo);
+      String hql = "SELECT COUNT(*) FROM Jugadores WHERE dorsal = :dorsal AND idequipo = :idEquipo";
+      Query<Long> query = sesion.createQuery(hql, Long.class);
+      query.setParameter("dorsal", dorsal);
+      query.setParameter("idEquipo", equipo);
 
-        Long count = query.uniqueResult();
-        return count != null && count > 1;
+      Long count = query.uniqueResult();
+      return count != null && count >= 1;
     } catch (Exception e) {
-        e.printStackTrace();
-        // Manejar la excepción si es necesario
-        return false; 
+      e.printStackTrace();
+      // Manejar la excepción si es necesario
+      return false;
     } finally {
-        sesion.close();
+      sesion.close();
     }
-}
+  }
 
-
-
-    /**
-     * Método para obtener un equipo por su id
-     * @return  devuelve el equipo por id
-     */
+  /**
+   * Método para obtener un equipo por su id
+   *
+   * @return devuelve el equipo por id
+   */
   private Equipo obtenerEquipoPorId() {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();

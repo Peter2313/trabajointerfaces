@@ -29,7 +29,7 @@ public class inscrientrenador extends javax.swing.JPanel {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
-    getRootPane().setDefaultButton(btninscribir);
+
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre entrenador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -183,8 +183,8 @@ public class inscrientrenador extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    
-   /**
+
+  /**
    * Este boton esa para inscribir entrenador y le paso los datos introducidos a un controlador para que lo meta en la base de datos
    *
    * @param evt
@@ -193,17 +193,17 @@ public class inscrientrenador extends javax.swing.JPanel {
     // TODO add your handling code here:
     if (tfnombre.getText().toString().isEmpty() || tfclocal.getText().toString().isEmpty() || tfcvisitante.getText().toString().isEmpty()) {
       JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
-    }else{
-        String nombrenetrenador = tfnombre.getText();
-        String clocalcolor = tfclocal.getText();
-        String cvisitante = tfcvisitante.getText();
+    } else {
+      String nombrenetrenador = tfnombre.getText();
+      String clocalcolor = tfclocal.getText();
+      String cvisitante = tfcvisitante.getText();
 
-        sql.inscribirentrenador(nombrenetrenador, clocalcolor, cvisitante);
+      sql.inscribirentrenador(nombrenetrenador, clocalcolor, cvisitante);
 
-        tfnombre.setText("");
-        tfclocal.setText("");
-        tfcvisitante.setText("");
-        }
+      tfnombre.setText("");
+      tfclocal.setText("");
+      tfcvisitante.setText("");
+    }
     }//GEN-LAST:event_btninscribirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

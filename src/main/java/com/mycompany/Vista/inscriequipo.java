@@ -14,7 +14,6 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -36,9 +35,7 @@ public class inscriequipo extends javax.swing.JPanel {
     initComponents();
     String nombreArchivo = "src/main/resources/nombreusuario.txt";
     String contenidoLeido = leerDesdeArchivo(nombreArchivo);
-    
-    getRootPane().setDefaultButton(btninscribir);
-    
+
     UIManager.put("Button.arc", 10);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
@@ -207,8 +204,8 @@ public class inscriequipo extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    
-   /**
+
+  /**
    * Este boton esa para inscribir Equipo y le paso los datos introducidos a un controlador para que lo meta en la base de datos
    *
    * @param evt
@@ -217,16 +214,16 @@ public class inscriequipo extends javax.swing.JPanel {
     // TODO add your handling code here:
     if (tfnombre.getText().toString().isEmpty() || tfciudad.getText().toString().isEmpty() || tfestadio.getText().toString().isEmpty()) {
       JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
-    }else{
-    String nequipo = tfnombre.getText();
-    String estadio = tfestadio.getText();
-    String Ciudad = tfciudad.getText();
+    } else {
+      String nequipo = tfnombre.getText();
+      String estadio = tfestadio.getText();
+      String Ciudad = tfciudad.getText();
 
-    sql.inscribirEquipo(nequipo, Ciudad, estadio);
-    
-    tfnombre.setText("");
-    tfestadio.setText("");
-    tfciudad.setText("");
+      sql.inscribirEquipo(nequipo, Ciudad, estadio);
+
+      tfnombre.setText("");
+      tfestadio.setText("");
+      tfciudad.setText("");
     }
   }//GEN-LAST:event_btninscribirActionPerformed
 
@@ -278,9 +275,10 @@ public class inscriequipo extends javax.swing.JPanel {
       super.paint(g);
     }
   }
-  
+
   /**
    * Metodo para leer de un archivo txt el nombre de usuario iniciado
+   *
    * @param nombreArchivo
    * @return devuelve lo que hay en el archivo txt
    */

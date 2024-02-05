@@ -29,6 +29,11 @@ public class sqlhelperactuequipo {
   private int idusuario;
 //metodo para recoger lo del archivo txt
 
+  /**
+   * Este metodo es para leer desde un archivo txt el nombre del usuario iniciado
+   * @param nombreArchivo archivo txt con el nombre de usuario logeado
+   * @return  devuelve lo escrito en le txt
+   */
   private static String leerDesdeArchivo(String nombreArchivo) {
     StringBuilder contenido = new StringBuilder();
 
@@ -44,8 +49,11 @@ public class sqlhelperactuequipo {
 
     return contenido.toString();
   }
-//metodo para obtener id de usuario
-
+  
+  /**
+   * metodo para obtener id de usuario
+   * @return devuelve el id del usuario
+   */
   public int obtenerIdUsuarioPorNombre() {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session session = sessionFactory.openSession();
@@ -68,8 +76,13 @@ public class sqlhelperactuequipo {
     }
   }
 
+  /**
+   * Este metodo es para buscar el usuario por el id 
+   * @param id se pasa el id del usuario
+   * @return devuelve el usuario
+   */
   public static Usuarios findById(int id) {
-    System.out.println(id + "metodo find");
+    //System.out.println(id + "metodo find");
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session session = sessionFactory.openSession();
     try {
@@ -88,7 +101,11 @@ public class sqlhelperactuequipo {
     }
   }
 
-  
+  /**
+   * Este metdo es para actualizar el equipo
+   * @param nuevoNombre nombre del quipo
+   * @param nuevoEstadio nombre del nuevo nombre del estadio
+   */
   public void actualizarEquipo(String nuevoNombre, String nuevoEstadio) {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -122,7 +139,7 @@ public class sqlhelperactuequipo {
       // Manejar cualquier excepción
       if (transaction != null) {
         transaction.rollback();
-        JOptionPane.showMessageDialog(null, "Error al actualizar equipo.");
+        JOptionPane.showMessageDialog(null, "Error al actualizar equipo,ese nombre ya esta en uso en otro equipo o no tiene equipo creado.");
       }
       e.printStackTrace();
     } finally {

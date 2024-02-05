@@ -22,7 +22,11 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author Pedro Garcia Vicente
  */
 public class ControladorEmail {
-
+/**
+ * Este metodo es para verificar el email si existe en la base de datos
+ * @param email se le pasa el email introducido
+ * @return devuelve true si existe false si no existe
+ */
   public boolean verificarEmail(String email) {
     boolean emailExiste = false;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -52,6 +56,12 @@ public class ControladorEmail {
     return emailExiste;
   }
 
+  /**
+   * Este metodo es para generar la nueva contraseña del usuario
+   * @param longitudMin es la longitud minima de contraseña
+   * @param longitudMax es la longitud maxima de contraseña
+   * @return devuelve la contraseña generada
+   */
   public String generarContrasena(int longitudMin, int longitudMax) {
     String CARACTERES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
     longitudMin = Math.max(1, longitudMin);
@@ -69,6 +79,11 @@ public class ControladorEmail {
     return contraseñaGenerada.toString();
   }
 
+  /**
+   * Este metodo es para guardar la contraseña nueva en la base de datos
+   * @param email se pasa el email del usuario
+   * @param contrasena contraseña
+   */
   public void actualizarContrasena(String email, String contrasena) {
     Session session = HibernateUtil.getSessionFactory().openSession();
     // Comienza una transacción

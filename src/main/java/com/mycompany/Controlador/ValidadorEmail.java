@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
+ *Esta clase es para validar si el eamil tiene un @ o un .
  * @author Pedro Garcia Vicente
  */
 public class ValidadorEmail {

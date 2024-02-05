@@ -29,10 +29,11 @@ public class actujugador extends javax.swing.JPanel {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
+    getRootPane().setDefaultButton(btnactujugador);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
-    tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre Jugador");
+    tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre nuevo a cambiar");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
-    jTfcambion.putClientProperty("JTextField.placeholderText", "Introduzca nombre nuevo");
+    jTfcambion.putClientProperty("JTextField.placeholderText", "Introduzca nombre jugador");
     jTfcambion.putClientProperty("FlatLaf.style", "arc:" + 12);
 
   }
@@ -67,7 +68,7 @@ public class actujugador extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nombre Jugador");
+        jLabel5.setText("Nombre Jugador a cambiar");
 
         btnactujugador.setBackground(new java.awt.Color(98, 75, 255));
         btnactujugador.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,7 +86,7 @@ public class actujugador extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Nombre Jugador a cambiar");
+        jLabel6.setText("Nombre Jugador");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -96,15 +97,11 @@ public class actujugador extends javax.swing.JPanel {
                 .addComponent(btnactujugador, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(364, 364, 364))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(128, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tfnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTfcambion))
@@ -168,6 +165,8 @@ public class actujugador extends javax.swing.JPanel {
    */
     private void btnactujugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactujugadorActionPerformed
     // TODO add your handling code here:
+    
+    //if por los campos vacios
     if (tfnombre.getText().toString().isEmpty() || jTfcambion.getText().toString().isEmpty()) {
       JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
     }else{
@@ -200,7 +199,7 @@ public class actujugador extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles.jpg")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles2.jpg")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);
@@ -217,7 +216,7 @@ public class actujugador extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/panelformu.png")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/panelformu2.png")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);

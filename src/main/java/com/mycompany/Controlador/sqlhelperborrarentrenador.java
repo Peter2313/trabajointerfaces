@@ -31,6 +31,11 @@ public class sqlhelperborrarentrenador {
   private String contenidoLeido = leerDesdeArchivo(nombreArchivo);
   private int idusuario;
 
+  /**
+   * Este metodo es para leer desde un archivo txt el nombre del usuario iniciado
+   * @param nombreArchivo archivo txt con el nombre de usuario logeado
+   * @return  devuelve lo escrito en le txt
+   */
   private static String leerDesdeArchivo(String nombreArchivo) {
     StringBuilder contenido = new StringBuilder();
 
@@ -47,6 +52,10 @@ public class sqlhelperborrarentrenador {
     return contenido.toString();
   }
 
+  /**
+   * metodo para obtener id de usuario
+   * @return devuelve el id del usuario
+   */
   public int obtenerIdUsuarioPorNombre() {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session session = sessionFactory.openSession();
@@ -68,7 +77,12 @@ public class sqlhelperborrarentrenador {
       session.close();
     }
   }
-
+  
+    /**
+   * Este metodo es para buscar el usuario por el id 
+   * @param id se pasa el id del usuario
+   * @return devuelve el usuario
+   */
   public static Usuarios findById(int id) {
     System.out.println(id + "metodo find");
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -83,6 +97,10 @@ public class sqlhelperborrarentrenador {
     }
   }
 
+  /**
+   * Este metodo es para borrar un entrenador
+   * @param nombreEntrenador nombre entrenador a borrar 
+   */
   public void borrarEntrenador(String nombreEntrenador) {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -127,6 +145,12 @@ public class sqlhelperborrarentrenador {
     }
   }
 
+  /**
+   * Metodo para buscar entrenador por su nombre y equipo
+   * @param nombrenetrenador nombre entrenador
+   * @param equipo nombre del equipo
+   * @return devuelve el entreandor
+   */
   private Entrenadores findEntrenadorByNombreYEquipo(String nombrenetrenador, Equipo equipo) {
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
       CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -144,7 +168,10 @@ public class sqlhelperborrarentrenador {
     return null;
   }
 
-// Método para obtener un equipo por su id
+    /**
+     * Método para obtener un equipo por su id
+     * @return  devuelve el equipo por id
+     */
   private Equipo obtenerEquipoPorId() {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();

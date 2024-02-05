@@ -34,6 +34,7 @@ public class Registro extends javax.swing.JFrame {
     tfpassword.putClientProperty("JTextField.placeholderText", "Introduzca contraseña");
 
     btnregi.putClientProperty("JButton.buttonType", "roundRect");
+    getRootPane().setDefaultButton(btnregi);
     btnvolver.putClientProperty("JButton.buttonType", "roundRect");
 
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -147,7 +148,8 @@ public class Registro extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-/**
+
+    /**
    * Este boton lo que hace es recoger los datos de los textfield y mandarlos al controlador para que registre al usuario en mi base de datos
    *
    * @param evt
@@ -159,20 +161,24 @@ public class Registro extends javax.swing.JFrame {
     String correo = tfemail.getText();
     String nombre = tfnombre.getText();
     String apellido = tfapellidos.getText();
+    //if para campos vacios
     if (user.isEmpty() || cont.isEmpty() || correo.isEmpty() || nombre.isEmpty() || apellido.isEmpty()) {
       JOptionPane.showMessageDialog(rootPane, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
     } else {
       try {
         boolean comprueba = sql.verificarCredenciales(user, cont, correo);
+        //if para comprobar si existe ya ese usuario o email
         if (comprueba == true) {
           JOptionPane.showMessageDialog(rootPane, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
           tfusername.setText("");
           tfpassword.setText("");
           tfemail.setText("");
+          
         } else {
           // Utilizo el ValidadorEmail para verificar el formato del correo
           ValidadorEmail validadorEmail = new ValidadorEmail();
-
+          
+          //este if es apra validar el email
           if (validadorEmail.validarEmail(correo)) {
             sql.introducirUsuario(user, cont, correo, nombre, apellido);
             JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");

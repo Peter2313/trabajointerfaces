@@ -182,6 +182,9 @@ public class Splash extends javax.swing.JFrame {
         sp.dispose();
         
     }
+    /**
+     * Para meter una imagen en un panel
+     */
 class Fondopanel extends JPanel {
 
     private Image imagen;

@@ -176,37 +176,45 @@ public class iniciosesion extends javax.swing.JFrame {
       // Obtener la contraseña almacenada del usuario
       String contrasenaAlmacenada = sql.obtenerContrasenaDeUsuario(usu);
 
-      // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
-      boolean comprueba = sql.verificarContrasena(cont, contrasenaAlmacenada);
+      // Verificar si la contraseña y usuario almacenada coincide con la ingresada por el usuario
+      boolean compruebau = sql.existeUsuario(usu);
+      
+      //if para comprobar si existe el usuario
+      if(!compruebau){
+          JOptionPane.showMessageDialog(rootPane, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
+      }else{
+          boolean comprueba = sql.verificarContrasena(cont, contrasenaAlmacenada);
+          
+        //if para comprobar la contraseña
+          if (!comprueba) {
+          JOptionPane.showMessageDialog(rootPane, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
+        } else {
+          //// Si el inicio de sesión es exitoso, guarda el usuario
+          /*Usuarios user = new Usuarios();
+          user.setUsuario(usu);*/
+          File f = new File("src/main/resources/nombreusuario.txt");
 
-      if (!comprueba) {
-        JOptionPane.showMessageDialog(rootPane, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
-      } else {
-        //// Si el inicio de sesión es exitoso, guarda el usuario
-        /*Usuarios user = new Usuarios();
-        user.setUsuario(usu);*/
-        File f = new File("src/main/resources/nombreusuario.txt");
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(f))) {
-          // Escribir en el archivo
-          writer.write(usu);
-          writer.newLine();
-          System.out.println("Información guardada en el archivo: " + f);
-        } catch (IOException e) {
-          e.printStackTrace();
+          try (BufferedWriter writer = new BufferedWriter(new FileWriter(f))) {
+            // Escribir en el archivo
+            writer.write(usu);
+            writer.newLine();
+            System.out.println("Información guardada en el archivo: " + f);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          // Acceder al usuario guardado esto en otro frame
+          //String usuario = MiClase.getUsuarioActual();
+          // Usa el valor del usuario como sea necesario en este otro frame
+          dispose();
+          // para ir a la otra ventana
+          Dashboard dash = new Dashboard();
+          // cerrar o esconder antes de abrir principal
+          dash.setVisible(true);
         }
-        // Acceder al usuario guardado esto en otro frame
-        //String usuario = MiClase.getUsuarioActual();
-        // Usa el valor del usuario como sea necesario en este otro frame
-        dispose();
-        // para ir a la otra ventana
-        Dashboard dash = new Dashboard();
-        // cerrar o esconder antes de abrir principal
-        dash.setVisible(true);
       }
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+     } catch (Exception e) {
+        e.printStackTrace();
+      }
     }//GEN-LAST:event_btniniActionPerformed
 
   /**

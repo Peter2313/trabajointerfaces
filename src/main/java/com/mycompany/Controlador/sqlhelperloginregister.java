@@ -17,7 +17,13 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author Pedro Garcia Vicente
  */
 public class sqlhelperloginregister {
-
+/**
+ * Metodo para verificar el correo,usuario y contraseña
+ * @param username nombre de usuario
+ * @param email email
+ * @param contrasena contraseña
+ * @return  devuelve true o false
+ */
   public boolean verificarCredenciales(String username, String email, String contrasena) {
     boolean credencialesValidas = false;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -26,7 +32,7 @@ public class sqlhelperloginregister {
 
     try {
       // Crear la consulta HQL
-      String hql = "FROM usuarios WHERE usuario = :usuario AND email = :email AND contrasena = :contrasena";
+      String hql = "FROM Usuarios WHERE usuario = :usuario OR email = :email OR contrasena = :contrasena";
       Query<Usuarios> query = sesion.createQuery(hql, Usuarios.class);
       query.setParameter("usuario", username);
       query.setParameter("email", email);
@@ -49,6 +55,14 @@ public class sqlhelperloginregister {
     return credencialesValidas;
   }
 
+  /**
+   * Metodo para registrar usuario
+   * @param username nombre de usuario
+   * @param password contraseña
+   * @param email email
+   * @param nombre nombre del presidente
+   * @param apellido apellidos del presidente
+   */
   public void introducirUsuario(String username, String password, String email, String nombre, String apellido) {
     // Obtén la sesión de Hibernate
     Session session = HibernateUtil.getSessionFactory().openSession();
@@ -84,7 +98,7 @@ public class sqlhelperloginregister {
         transaction.rollback();
        
       }
-      e.printStackTrace(); // Trata el error según tus necesidades
+      e.printStackTrace(); 
     } finally {
       // Cierra la sesión de Hibernate
       session.close();

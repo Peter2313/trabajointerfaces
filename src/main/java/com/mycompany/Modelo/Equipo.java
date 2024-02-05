@@ -19,7 +19,7 @@ public class Equipo implements java.io.Serializable {
   private Integer idEquipo;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false) @ToString.Exclude
+  @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false,unique = true) @ToString.Exclude
   private Usuarios usuarios;
 
   @Column(name = "nombre_equipo", length = 50, nullable = false, unique = true)

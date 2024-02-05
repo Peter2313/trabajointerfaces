@@ -29,6 +29,7 @@ public class borrarentrenador extends javax.swing.JPanel {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
+    getRootPane().setDefaultButton(btnborrar);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre entrenador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -144,6 +145,8 @@ public class borrarentrenador extends javax.swing.JPanel {
 
     private void btnborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarActionPerformed
         // TODO add your handling code here:
+        
+        //if para campos vacios
      if(tfnombre.getText().toString().isEmpty()) {
       JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
     }else{
@@ -172,7 +175,7 @@ public class borrarentrenador extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles.jpg")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles2.jpg")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);
@@ -189,7 +192,7 @@ public class borrarentrenador extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/panelformu.png")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/panelformu2.png")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);

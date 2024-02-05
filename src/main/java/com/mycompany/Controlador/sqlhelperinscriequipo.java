@@ -25,7 +25,12 @@ public class sqlhelperinscriequipo {
   private String nombreArchivo = "src/main/resources/nombreusuario.txt";
   private String contenidoLeido = leerDesdeArchivo(nombreArchivo);
   private int idusuario;
-
+  
+    /**
+   * Este metodo es para leer desde un archivo txt el nombre del usuario iniciado
+   * @param nombreArchivo archivo txt con el nombre de usuario logeado
+   * @return  devuelve lo escrito en le txt
+   */
   private static String leerDesdeArchivo(String nombreArchivo) {
     StringBuilder contenido = new StringBuilder();
 
@@ -42,6 +47,10 @@ public class sqlhelperinscriequipo {
     return contenido.toString();
   }
 
+    /**
+   * metodo para obtener id de usuario
+   * @return devuelve el id del usuario
+   */
   public int obtenerIdUsuarioPorNombre() {
       SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
@@ -64,7 +73,11 @@ public class sqlhelperinscriequipo {
     }
   }
 
-  
+    /**
+   * Este metodo es para buscar el usuario por el id 
+   * @param id se pasa el id del usuario
+   * @return devuelve el usuario
+   */
   public static Usuarios findById(int id) {
       System.out.println(id+ "metodo find");
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -79,6 +92,12 @@ public class sqlhelperinscriequipo {
     }
 }
 
+    /**
+     * metodo para inscribir equipo
+     * @param nombreEquipo nombre del equipo a inscirbir
+     * @param ciudad ciudad del equipo
+     * @param estadio nombre del estadio
+     */
   public void inscribirEquipo(String nombreEquipo, String ciudad, String estadio) {
     // Obtener el idUsuario utilizando el método anterior
     Usuarios usuario = findById(obtenerIdUsuarioPorNombre());
@@ -113,7 +132,7 @@ public class sqlhelperinscriequipo {
         if (transaction != null) {
           // Rollback en caso de error
           transaction.rollback();
-          JOptionPane.showMessageDialog(null, "Equipo mal inscrito.");
+          JOptionPane.showMessageDialog(null, "Equipo mal inscrito,porque ya existe uno con ese nombre o ya tiene uno creado.");
         }
         e.printStackTrace();
       }finally {

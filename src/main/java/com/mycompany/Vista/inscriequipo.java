@@ -36,7 +36,9 @@ public class inscriequipo extends javax.swing.JPanel {
     initComponents();
     String nombreArchivo = "src/main/resources/nombreusuario.txt";
     String contenidoLeido = leerDesdeArchivo(nombreArchivo);
-
+    
+    getRootPane().setDefaultButton(btninscribir);
+    
     UIManager.put("Button.arc", 10);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
@@ -49,7 +51,7 @@ public class inscriequipo extends javax.swing.JPanel {
     tfnombrepresi.putClientProperty("FlatLaf.style", "arc:" + 12);
     tfnombrepresi.setText(contenidoLeido);
 
-    tfestadio.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
+    tfestadio.putClientProperty("JTextField.placeholderText", "Introduzca nombre estadio");
     tfestadio.putClientProperty("FlatLaf.style", "arc:" + 12);
   }
 
@@ -107,6 +109,11 @@ public class inscriequipo extends javax.swing.JPanel {
         btninscribir.setBorder(null);
         btninscribir.setBorderPainted(false);
         btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btninscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninscribirActionPerformed(evt);
+            }
+        });
 
         tfnombre.setPreferredSize(new java.awt.Dimension(263, 42));
 
@@ -114,6 +121,7 @@ public class inscriequipo extends javax.swing.JPanel {
 
         tfciudad.setPreferredSize(new java.awt.Dimension(263, 42));
 
+        tfnombrepresi.setEnabled(false);
         tfnombrepresi.setPreferredSize(new java.awt.Dimension(263, 42));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -199,7 +207,8 @@ public class inscriequipo extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-/**
+    
+   /**
    * Este boton esa para inscribir Equipo y le paso los datos introducidos a un controlador para que lo meta en la base de datos
    *
    * @param evt
@@ -244,7 +253,7 @@ public class inscriequipo extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles.jpg")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles2.jpg")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);
@@ -261,7 +270,7 @@ public class inscriequipo extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/panelformu.png")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/panelformu2.png")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);
@@ -269,7 +278,12 @@ public class inscriequipo extends javax.swing.JPanel {
       super.paint(g);
     }
   }
-
+  
+  /**
+   * Metodo para leer de un archivo txt el nombre de usuario iniciado
+   * @param nombreArchivo
+   * @return devuelve lo que hay en el archivo txt
+   */
   private static String leerDesdeArchivo(String nombreArchivo) {
     StringBuilder contenido = new StringBuilder();
 

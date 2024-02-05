@@ -34,6 +34,7 @@ public class recuemail extends javax.swing.JFrame {
     labelrpassw.putClientProperty("FlatLaf.style", "font: $h0.font");
 
     btnrecu.putClientProperty("JButton.buttonType", "roundRect");
+    getRootPane().setDefaultButton(btnrecu);
     btnvolver.putClientProperty("JButton.buttonType", "roundRect");
 
     tfemail.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -143,7 +144,8 @@ public class recuemail extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-/**
+
+   /**
    * Este boton lo que hace es recoger el email y mandarlo al controlador para saber si el emai esta en la base de datos y si esta te manda el correo
    *
    * @param evt
@@ -152,7 +154,8 @@ public class recuemail extends javax.swing.JFrame {
     // TODO add your handling code here:
     String mail = tfemail.getText();
     boolean existe = cemail.verificarEmail(mail);
-
+    
+    //if si existe el email
     if (existe) {
       String nuevac = cemail.generarContrasena(8, 20);
       final String fromemail = "pedro.garvic@educa.jcyl.es";

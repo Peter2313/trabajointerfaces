@@ -29,6 +29,7 @@ public class inscrijugador extends javax.swing.JPanel {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
+    getRootPane().setDefaultButton(btninscribir);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre Jugador");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -161,27 +162,62 @@ public class inscrijugador extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-/**
+    
+   /**
    * Este boton esa para inscribir Jugador y le paso los datos introducidos a un controlador para que lo meta en la base de datos
    *
    * @param evt
    */
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
     // TODO add your handling code here:
+   
+    //if para campos vacios
     if (tfnombre.getText().toString().isEmpty() || tfdorsal.getText().toString().isEmpty()) {
       JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
     }else{
-        String nombre = tfnombre.getText();
+        
         String dorsalText = tfdorsal.getText();
+        String nombre = tfnombre.getText();
+        
+        //este if es por si es entero o no
+        if (esEntero(dorsalText)){
+            //este if es para el numero de jugadores en un equipo
+            if(sql.obtenerConteoJugadoresPorEquipo()>=12){
+            JOptionPane.showMessageDialog(this, "maximo de jugadores en tu equipo", "jugadores", JOptionPane.WARNING_MESSAGE); 
+            }else{
+                int dorsal = Integer.parseInt(dorsalText);
+                
+                //este if es para verificar el dorsal si esta repetido
+                    if(sql.verificarDorsalRepetido(dorsal)==true){
+                    JOptionPane.showMessageDialog(this, "ya existe un jugador con ese dorsal en tu equipo", "jugadoresdorsal", JOptionPane.WARNING_MESSAGE); 
+                    }else{
+                        sql.inscribirJugador(nombre, dorsal);
 
-        int dorsal = Integer.parseInt(dorsalText);
-        sql.inscribirJugador(nombre, dorsal);
-
-        tfnombre.setText("");
-        tfdorsal.setText("");
+                        tfnombre.setText("");
+                        tfdorsal.setText("");  
+                    }
+           }
+              
+        }else{
+        JOptionPane.showMessageDialog(this, "dorsal tiene que ser numero entero", "entero", JOptionPane.WARNING_MESSAGE);
         }
+        
+       }
     }//GEN-LAST:event_btninscribirActionPerformed
-
+    
+        /**
+         * Método para verificar si una cadena es un entero
+         * @param texto el texto pasado para comprobar si es entero
+         * @return devuelve true o false
+         */
+        private static boolean esEntero(String texto) {
+            try {
+                Integer.parseInt(texto);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btninscribir;
     private javax.swing.JLabel jLabel1;
@@ -201,7 +237,7 @@ public class inscrijugador extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles.jpg")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/fondopaneles2.jpg")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);
@@ -218,7 +254,7 @@ public class inscrijugador extends javax.swing.JPanel {
     private Image imagen;
 
     public void paint(Graphics g) {
-      imagen = new ImageIcon(getClass().getResource("/img/panelformu.png")).getImage();
+      imagen = new ImageIcon(getClass().getResource("/img/panelformu2.png")).getImage();
       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
       setOpaque(false);

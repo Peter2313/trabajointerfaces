@@ -264,7 +264,8 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-/**
+
+    /**
    * boton para ir a un panel
    *
    * @param evt
@@ -594,7 +595,7 @@ public class Dashboard extends javax.swing.JFrame {
   /**
    * Este metodo se llama para que muestre en el panel a los paneles que llamo
    *
-   * @param p
+   * @param p el parametro pasado como jpanel
    */
   private void mostrarpanel(JPanel p) {
     p.setSize(1160, 900);

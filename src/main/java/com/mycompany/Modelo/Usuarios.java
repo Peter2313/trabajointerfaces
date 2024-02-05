@@ -51,6 +51,11 @@ public class Usuarios implements java.io.Serializable {
     this.nombre = nombre;
   }
 
+  /**
+   * Metodo para buscar el equipo
+   * @param usuario
+   * @return 
+   */
   public static Equipo findByEquipo(Usuarios usuario) {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session session = sessionFactory.openSession();

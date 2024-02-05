@@ -108,18 +108,12 @@
                       <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="128" max="32767" attributes="0"/>
-                              <Component id="jLabel6" min="-2" pref="294" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel6" min="-2" pref="294" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="56" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="tfnombre" max="32767" attributes="0"/>
                           <Component id="jTfcambion" max="32767" attributes="0"/>
@@ -157,7 +151,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Jugador"/>
+                <Property name="text" type="java.lang.String" value="Nombre Jugador a cambiar"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnactujugador">
@@ -198,7 +192,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Jugador a cambiar"/>
+                <Property name="text" type="java.lang.String" value="Nombre Jugador"/>
               </Properties>
             </Component>
           </SubComponents>

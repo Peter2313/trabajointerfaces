@@ -29,6 +29,11 @@ public class sqlhelperactujugador {
   private String contenidoLeido = leerDesdeArchivo(nombreArchivo);
   private int idusuario;
 
+  /**
+   * Este metodo es para leer desde un archivo txt el nombre del usuario iniciado
+   * @param nombreArchivo archivo txt con el nombre de usuario logeado
+   * @return  devuelve lo escrito en le txt
+   */
   private static String leerDesdeArchivo(String nombreArchivo) {
     StringBuilder contenido = new StringBuilder();
 
@@ -44,7 +49,11 @@ public class sqlhelperactujugador {
 
     return contenido.toString();
   }
-
+  
+    /**
+   * metodo para obtener id de usuario
+   * @return devuelve el id del usuario
+   */
   public int obtenerIdUsuarioPorNombre() {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session session = sessionFactory.openSession();
@@ -67,6 +76,11 @@ public class sqlhelperactujugador {
     }
   }
 
+  /**
+   * Este metodo es para buscar el usuario por el id 
+   * @param id se pasa el id del usuario
+   * @return devuelve el usuario
+   */
   public static Usuarios findById(int id) {
     System.out.println(id + "metodo find");
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -81,6 +95,11 @@ public class sqlhelperactujugador {
     }
   }
 
+    /**
+     * Este metdo es para actualizar el equipo
+     * @param nombreJugador el nombre del jugador
+     * @param nuevoNombre el nuevo nombre a cambiar
+     */
   public void actualizarJugador(String nombreJugador, String nuevoNombre) {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -127,7 +146,13 @@ public class sqlhelperactujugador {
       }
     }
   }
-
+  
+    /**
+     * Metodo para buscar jugador de un equipo
+     * @param nombreJugador nombre jugador
+     * @param equipo el equipo en el quye buscar
+     * @return devuelve el jugador
+     */
   private Jugadores findJugadorByNombreYEquipo(String nombreJugador, Equipo equipo) {
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
       CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -145,7 +170,10 @@ public class sqlhelperactujugador {
     return null;
   }
 
-// Método para obtener un equipo por su id
+/**
+ * Método para obtener un equipo por su id
+ * @return  devuelve el equipo por id
+ */
   private Equipo obtenerEquipoPorId() {
     Transaction transaction = null;
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();

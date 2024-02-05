@@ -113,11 +113,11 @@
                           <Component id="tfnombre" min="-2" pref="263" max="-2" attributes="0"/>
                           <Component id="tfestadio" min="-2" pref="263" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="142" max="32767" attributes="0"/>
+                      <EmptySpace pref="143" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btninscribir" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="btnactuequipo" min="-2" pref="122" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="363" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -136,7 +136,7 @@
                           <Component id="tfestadio" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                      <Component id="btninscribir" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnactuequipo" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace pref="369" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -165,7 +165,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre Equipo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btninscribir">
+            <Component class="javax.swing.JButton" name="btnactuequipo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="4b" red="62" type="rgb"/>
@@ -183,7 +183,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btninscribirActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnactuequipoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="tfnombre">

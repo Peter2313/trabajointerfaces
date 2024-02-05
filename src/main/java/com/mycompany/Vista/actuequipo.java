@@ -29,6 +29,7 @@ public class actuequipo extends javax.swing.JPanel {
     //this.setContentPane(fondo);
     initComponents();
     UIManager.put("Button.arc", 10);
+    getRootPane().setDefaultButton(btnactuequipo);
     //tfpassword.putClientProperty( "JComponent.roundRect", true );
     tfnombre.putClientProperty("JTextField.placeholderText", "Introduzca nombre equipo");
     tfnombre.putClientProperty("FlatLaf.style", "arc:" + 12);
@@ -49,7 +50,7 @@ public class actuequipo extends javax.swing.JPanel {
         jPanel2 = new Fondopanelmedio();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btninscribir = new javax.swing.JButton();
+        btnactuequipo = new javax.swing.JButton();
         tfnombre = new javax.swing.JTextField();
         tfestadio = new javax.swing.JTextField();
 
@@ -73,15 +74,15 @@ public class actuequipo extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Nombre Equipo");
 
-        btninscribir.setBackground(new java.awt.Color(98, 75, 255));
-        btninscribir.setForeground(new java.awt.Color(255, 255, 255));
-        btninscribir.setText("Actualizar Equipo");
-        btninscribir.setBorder(null);
-        btninscribir.setBorderPainted(false);
-        btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btninscribir.addActionListener(new java.awt.event.ActionListener() {
+        btnactuequipo.setBackground(new java.awt.Color(98, 75, 255));
+        btnactuequipo.setForeground(new java.awt.Color(255, 255, 255));
+        btnactuequipo.setText("Actualizar Equipo");
+        btnactuequipo.setBorder(null);
+        btnactuequipo.setBorderPainted(false);
+        btnactuequipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnactuequipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btninscribirActionPerformed(evt);
+                btnactuequipoActionPerformed(evt);
             }
         });
 
@@ -105,7 +106,7 @@ public class actuequipo extends javax.swing.JPanel {
                 .addContainerGap(143, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnactuequipo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(363, 363, 363))
         );
         jPanel2Layout.setVerticalGroup(
@@ -120,7 +121,7 @@ public class actuequipo extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(tfestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(97, 97, 97)
-                .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnactuequipo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(369, Short.MAX_VALUE))
         );
 
@@ -164,7 +165,7 @@ public class actuequipo extends javax.swing.JPanel {
    *
    * @param evt
    */
-  private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
+  private void btnactuequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactuequipoActionPerformed
     // TODO add your handling code here:
     String nequipo = tfnombre.getText();
     String estadio = tfestadio.getText();
@@ -174,10 +175,10 @@ public class actuequipo extends javax.swing.JPanel {
     tfnombre.setText("");
     tfestadio.setText("");
 
-  }//GEN-LAST:event_btninscribirActionPerformed
+  }//GEN-LAST:event_btnactuequipoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btninscribir;
+    private javax.swing.JButton btnactuequipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
